@@ -1,4 +1,6 @@
-const { createSlice, createAsyncThunk } = require('@reduxjs/toolkit');
+import axiosinstance from '../utilities/axiosInstance';
+
+const { createSlice, createAsyncThunk,getDefaultMiddleware } = require('@reduxjs/toolkit');
 
 export const STATUSES = Object.freeze({
     IDLE: 'idle',
@@ -10,6 +12,7 @@ const productSlice = createSlice({
     name: 'product',
     initialState: {
         data: [],
+       catedata: [],
         status: STATUSES.IDLE,
     },
     reducers: {
@@ -19,7 +22,11 @@ const productSlice = createSlice({
         // setStatus(state, action) {
         //     state.status = action.payload;
         // },
-    },
+    },  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
+
     extraReducers: (builder) => {
         builder
             .addCase(fetchProducts.pending, (state, action) => {
@@ -31,8 +38,32 @@ const productSlice = createSlice({
             })
             .addCase(fetchProducts.rejected, (state, action) => {
                 state.status = STATUSES.ERROR;
+            })
+            .addCase(fetchProducts1.pending, (state, action) => {
+                state.status = STATUSES.LOADING;
+            })
+            .addCase(fetchProducts1.fulfilled, (state, action) => {
+                state.catedata = action.payload;
+                state.status = STATUSES.IDLE;
+            })
+            .addCase(fetchProducts1.rejected, (state, action) => {
+                state.status = STATUSES.ERROR;
             });
     },
+    /* extraReducers: (builder) => {
+        builder
+           
+            .addCase(fetchProducts1.pending, (state, action) => {
+                state.status = STATUSES.LOADING;
+            })
+            .addCase(fetchProducts1.fulfilled, (state, action) => {
+                state.catedata = action.payload;
+                state.status = STATUSES.IDLE;
+            })
+            .addCase(fetchProducts1.rejected, (state, action) => {
+                state.status = STATUSES.ERROR;
+            });
+    }, */
 });
 
 export const { setProducts, setStatus } = productSlice.actions;
@@ -40,9 +71,13 @@ export default productSlice.reducer;
 
 // Thunks
 export const fetchProducts = createAsyncThunk('products/fetch', async () => {
-    const res = await fetch('https://fakestoreapi.com/products');
-    const data = await res.json();
-    return data;
+    const res = await axiosinstance.get('/products');
+    return res;
+});
+export const fetchProducts1 = createAsyncThunk('products/fetch1', async () => {
+    const res = await axiosinstance.get('products/category/jewelery');
+    console.log("mintu"+res)
+    return res;
 });
 
 // export function fetchProducts() {
