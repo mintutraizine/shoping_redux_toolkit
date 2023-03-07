@@ -7,6 +7,11 @@ import Cart from './pages/Cart';
 import Navbar from './components/Navbar';
 import { PersistGate } from 'redux-persist/integration/react';
 import store,{persistor} from './store/store';
+import MuiNavbar from './components/MuiNavbar';
+import ProductDetails from './pages/productdetails/ProductDetails';
+const navitmelist=[{ScreenName:'Home',Path:'/'},{ScreenName:'About Us',Path:'/Services'},
+{ScreenName:'Showcase',Path:'/Services'},{ScreenName:'Headphones',Path:'/'},
+{ScreenName:'Merchandise',Path:'/Services'},{ScreenName:'Contact Us',Path:'/Services'}]
 
 function App() {
     return (
@@ -14,10 +19,11 @@ function App() {
         <Provider store={store}>
             <PersistGate persistor={persistor} loading={null}>
             <BrowserRouter>
-                <Navbar />
+               <MuiNavbar navitems={navitmelist}/>
                 <Routes>
                     <Route path="/" element={<Home />}></Route>
                     <Route path="/cart" element={<Cart />}></Route>
+                    <Route path="/productdetails" element={<ProductDetails />}></Route>
                 </Routes>
             </BrowserRouter>
             </PersistGate>
