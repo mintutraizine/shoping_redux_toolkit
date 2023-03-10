@@ -4,7 +4,8 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
-import vibelogo from '../static/images/vibe_logo.png'
+import imagepaths from '../static/imagepaths';
+//import vibelogo from '../static/images/vibe_logo.png'
 import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -39,7 +40,7 @@ const MuiNavbar = ({ navitems }) => {
               maxHeight: { xs: 72, md: 72 },
               maxWidth: { xs: 110, md: 110 },
             }}
-            src={vibelogo}
+            src={imagepaths.newLogo}
           /> <DrawerCompoenent /></>) : (<Grid sx={{ placeItems: 'center' }} container>
             <Grid item xs={2}>
               <CardMedia
@@ -50,7 +51,7 @@ const MuiNavbar = ({ navitems }) => {
                   maxHeight: { xs: 72, md: 72 },
                   maxWidth: { xs: 110, md: 110 },
                 }}
-                src={vibelogo}
+                src={imagepaths.newLogo}
               />
             </Grid>
             <Grid item xs={6}>

@@ -5,7 +5,7 @@ import { useLocation } from 'react-router-dom';
 import CircleIcon from '@mui/icons-material/Circle';
 import CircleTwoToneIcon from '@mui/icons-material/CircleTwoTone';
 import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
-import imagepaths from '../../static/images/imagepaths';
+import imagepaths from '../../static/imagepaths';
 import { CheckBox, Image } from '@mui/icons-material';
 import { add } from '../../store/cartSlice';
 import { useDispatch } from 'react-redux';
@@ -161,7 +161,16 @@ const ProductDetails = () => {
       <Box sx={{backgroundColor:'#F5F5F5',p:2,m:2}}>
   <Stack  flexDirection={'row'}>
     <Stack flexDirection={'row'}>
-    <Image source={imagepaths.newLogo} />
+    <CardMedia
+            component="img"
+            sx={{
+              height: 61,
+              width: 61,
+              maxHeight: { xs: 61, md: 61 },
+              maxWidth: { xs: 61, md: 61 },
+            }}
+            src={imagepaths.Secure_Checkout}
+          />
             <Typography style={{ marginLeft: 10, fontWeight: 'bold', color: '#000000' }}>
               {'Available Music Album with This Headphone '}
             </Typography>
