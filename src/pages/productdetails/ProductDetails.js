@@ -146,7 +146,7 @@ const ProductDetails = () => {
               <Button onClick={() => handleAdd(state.data)} sx={{ width: 200, color: '#FFF', backgroundColor: '#D9AC5D', textTransform: 'none' }} variant="contained">Add to cart</Button>
 
               <Typography style={{ textDecorationStyle: 'solid', marginLeft: 20, }}>
-                {'Delivery byby1by2: ' + 'Wednesday 3 apirlll 20323'}
+                {'Delivery by: ' + 'Wednesday 3 apirlll 20323'}
               </Typography>
 
             </Box>
