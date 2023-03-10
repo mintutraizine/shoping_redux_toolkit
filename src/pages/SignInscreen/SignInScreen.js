@@ -8,17 +8,17 @@ import {
   Grid,
 } from "@mui/material";
 
-import { typography } from "@mui/system";
 import { Link } from "react-router-dom";
 
 import imagepaths from "../../static/imagepaths";
 const SignInScreen = () => {
   return (
     <Box
-      maxHeight={450}
+      // maxHeight={450}
+
       sx={{
         flexGrow: 1,
-        maxWidth: 800,
+        maxWidth: 840,
         //  backgroundColor: "red",
         margin: "auto",
         marginTop: 4,
@@ -37,17 +37,17 @@ const SignInScreen = () => {
             justifyContent={"center"}
             display="flex"
             flexDirection={"column"}
-            paddingRight={2}
-            paddingLeft={2}
+            paddingRight={6}
+            paddingLeft={6}
           >
             <Typography
               fontFamily={"inter"}
               fontWeight={"500"}
-              fontSize={"25px"}
+              fontSize={"28px"}
               fontStyle={"normal"}
               lineHeight={"120%"}
               color={"#222222"}
-              marginTop={2}
+              marginTop={4}
               textAlign="center"
             >
               Welcome to VIBEWORLD
@@ -58,13 +58,14 @@ const SignInScreen = () => {
               fontFamily={"inter"}
               fontStyle={"normal"}
               color={"#D9AC5D"}
+              marginTop={1}
             >
               Vibe In
             </Typography>
             <Typography
               variant="h8"
               align="left"
-              marginTop={1}
+              marginTop={2}
               marginBottom={1}
               fontWeight={400}
               fontSize={"12px"}
@@ -75,7 +76,7 @@ const SignInScreen = () => {
               variant="outlined"
               placeholder="Enter email"
               size="small"
-              // fontSize={"14px"}
+              fontSize={"16Px"}
             />
             <Typography
               variant="h8"
@@ -90,7 +91,7 @@ const SignInScreen = () => {
             <TextField
               placeholder="Enter password"
               fontWeight={400}
-              fontSize={"14px"}
+              fontSize={"16Px"}
               size="small"
             />
             <Button
@@ -109,7 +110,7 @@ const SignInScreen = () => {
               justifyContent={"space-between"}
               spacing={1}
               alignItems="center"
-              marginTop={1}
+              marginTop={4}
             >
               <Stack flexDirection={"row"} alignItems="center">
                 <div
@@ -117,7 +118,7 @@ const SignInScreen = () => {
                     border: "1px solid #D9AC5D",
                     height: 12,
                     width: 12,
-                    marginRight: 5,
+                    marginRight: 10,
                   }}
                 ></div>
                 <Typography
@@ -149,22 +150,26 @@ const SignInScreen = () => {
               marginTop={2}
             >
               <hr
+                size={1}
                 style={{
                   color: "#000000",
                   backgroundColor: "#000000",
 
                   borderColor: "#000000",
                   width: 100,
+                  borderBlockColor: "#AAAAAA",
                 }}
               />
               <div style={{ margin: 4 }}>or</div>
               <hr
+                size={1}
                 style={{
                   color: "#000000",
                   backgroundColor: "#000000",
 
                   borderColor: "#000000",
                   width: 100,
+                  borderBlockColor: "#AAAAAA",
                 }}
               />
             </Stack>
@@ -202,12 +207,16 @@ const SignInScreen = () => {
               flexDirection="row"
               alignItems={"center"}
               margin="auto"
-              marginTop={3}
-              component={Link}
-              to="/SignupScreen"
+              marginTop={5}
+              marginBottom={5}
             >
               <Typography fontSize={12}>Don’t have an account ? </Typography>
-              <Typography fontSize={12} color="#D9AC5D">
+              <Typography
+                fontSize={12}
+                color="#D9AC5D"
+                component={Link}
+                to="/SignupScreen"
+              >
                 Create Vibe World Account
               </Typography>
             </Stack>

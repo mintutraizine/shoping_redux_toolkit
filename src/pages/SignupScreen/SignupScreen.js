@@ -13,10 +13,10 @@ import { Link } from "react-router-dom";
 const SignupScreen = () => {
   return (
     <Box
-      maxHeight={450}
+      //maxHeight={450}
       sx={{
         flexGrow: 1,
-        maxWidth: 800,
+        maxWidth: 840,
         //  backgroundColor: "red",
         margin: "auto",
         marginTop: 4,
@@ -35,7 +35,7 @@ const SignupScreen = () => {
             justifyContent={"center"}
             display="flex"
             flexDirection={"column"}
-            paddingRight={2}
+            paddingRight={6}
             paddingLeft={2}
           >
             <Typography
@@ -46,7 +46,7 @@ const SignupScreen = () => {
               lineHeight={"120%"}
               color={"#222222"}
               marginTop={2}
-              textAlign="center"
+              //textAlign="center"
             >
               Welcome to VIBEWORLD
             </Typography>
