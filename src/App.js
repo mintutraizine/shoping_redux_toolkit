@@ -9,9 +9,10 @@ import store,{persistor} from './store/store';
 import MuiNavbar from './components/MuiNavbar';
 import ProductDetails from './pages/productdetails/ProductDetails';
 import Cart from './pages/cartScreen/Cart';
+import ContactUs from './pages/ContactUs/ContactUs';
 const navitmelist=[{ScreenName:'Home',Path:'/'},{ScreenName:'About Us',Path:'/Services'},
 {ScreenName:'Showcase',Path:'/Services'},{ScreenName:'Headphones',Path:'/'},
-{ScreenName:'Merchandise',Path:'/Services'},{ScreenName:'Contact Us',Path:'/Services'}]
+{ScreenName:'Merchandise',Path:'/Services'},{ScreenName:'Contact Us',Path:'/contactus'}]
 
 function App() {
     return (
@@ -24,6 +25,7 @@ function App() {
                     <Route path="/" element={<Home />}></Route>
                     <Route path="/cart" element={<Cart />}></Route>
                     <Route path="/productdetails" element={<ProductDetails />}></Route>
+                    <Route path="/contactus" element={<ContactUs />}></Route>
                 </Routes>
             </BrowserRouter>
             </PersistGate>
