@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { AppBar, Button,Stack, Avatar, CardMedia, useTheme, useMediaQuery, Grid, Tabs, Tab, FormControl, Select, MenuItem, Badge } from '@mui/material';
+import { AppBar, Button, Stack, Avatar, CardMedia, useTheme, useMediaQuery, Grid, Tabs, Tab, FormControl, Select, MenuItem, Badge } from '@mui/material';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -11,7 +11,7 @@ import { useSelector } from 'react-redux';
 import DrawerCompoenent from './DrawerCompoenent';
 //import { Stack } from '@mui/system';
 const MuiNavbar = ({ navitems }) => {
-  const  itemQuantity = useSelector((state) => state.cart);
+  const itemQuantity = useSelector((state) => state.cart);
   const [countyName, setcountyName] = React.useState('');
   const items = useSelector((state) => state.cart);
   const [tabvalue, settabValue] = useState(0);
@@ -25,7 +25,7 @@ const MuiNavbar = ({ navitems }) => {
     setcountyName(event.target.value);
   };
   return (
-    <Box>
+    <Box sx={{position:'sticky',top:0}}>
       <AppBar position="static" sx={{
         height: 90,
         justifyContent: 'center', backgroundColor: "#2E354D"
@@ -54,42 +54,42 @@ const MuiNavbar = ({ navitems }) => {
               />
             </Grid>
             <Grid item xs={6}>
-              <Tabs  value={tabvalue} textColor='inherit' indicatorColor='secondary' onChange={(e, val) => {
+              <Tabs value={tabvalue} textColor='inherit' indicatorColor='secondary' onChange={(e, val) => {
                 settabValue(val)
               }}>
-                {navitems.map((item, index) => <Tab sx={{textTransform: 'none'}}  component={Link}
-        to={{
-          pathname:item.Path ,
-        }} key={index} label={item.ScreenName} />)}
+                {navitems.map((item, index) => <Tab sx={{ textTransform: 'none' }} component={Link}
+                  to={{
+                    pathname: item.Path,
+                  }} key={index} label={item.ScreenName} />)}
               </Tabs>
 
             </Grid>
             <Grid item xs={1} />
             <Grid item xs={3}>
-              <Box sx={{ display: 'flex' ,justifyContent:'flex-end',alignItems:'center'}}>
-              <Badge badgeContent={itemQuantity.length} color="primary">
-              <IconButton  component={Link}
-        to={{
-          pathname:'/cart',
-        }} sx={{color:'white'}}>
-              <ShoppingCartCheckoutIcon />
-            </IconButton>
-</Badge>
-              
-              <FormControl size="small" sx={{ m: 1, minWidth: 80}}>
-  <Select sx={{borderColor: 'red',color:'white'}}
-  inputProps={{ 'aria-label': 'Without label'  }}
-    labelId="demo-simple-select-label"
-    id="demo-simple-select"
-    value={countyName}
-    onChange={handleCountryChange}
-  >
-    <MenuItem value={1}>1</MenuItem>
-    <MenuItem value={2}>2</MenuItem>
-    <MenuItem value={3}>3</MenuItem>
-  </Select>
-</FormControl>
-<Button sx={{textTransform: 'none',backgroundColor: "#D9AC5D",color:'white',width:100,height:40}} size='small'>Sign In</Button>
+              <Box sx={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center',}}>
+                <Badge sx={{m:1}} badgeContent={itemQuantity.length} color="primary">
+                  <IconButton component={Link}
+                    to={{
+                      pathname: '/cart',
+                    }} sx={{ color: 'white' }}>
+                    <ShoppingCartCheckoutIcon />
+                  </IconButton>
+                </Badge>
+
+                <FormControl size="small" sx={{ m: 1, minWidth: 80 }}>
+                  <Select
+                    inputProps={{ 'aria-label': 'Without label' }}
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    value={countyName}
+                    onChange={handleCountryChange}
+                  >
+                    <MenuItem value={1}>1</MenuItem>
+                    <MenuItem value={2}>2</MenuItem>
+                    <MenuItem value={3}>3</MenuItem>
+                  </Select>
+                </FormControl>
+                <Button sx={{ m:1,textTransform: 'none', backgroundColor: "#D9AC5D", color: 'white', width: 100, height: 40 }} size='small'>Sign In</Button>
               </Box>
             </Grid>
           </Grid>)}

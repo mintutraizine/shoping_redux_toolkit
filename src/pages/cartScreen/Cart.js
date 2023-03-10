@@ -4,7 +4,7 @@ import { Stack } from '@mui/system';
 import { getNodeText } from '@testing-library/react';
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { remove } from '../store/cartSlice';
+import { remove } from '../../store/cartSlice';
 
 const Cart = () => {
     const dispatch = useDispatch();
@@ -17,25 +17,29 @@ const Cart = () => {
         <>
             <Grid container p={10}>
                 <Grid item xs={12} md={8}>
-                    <h3>Cart</h3>
-                    <div className="cartWrapper">
+                    <Typography sx={{
+                        color
+                            : 'red'
+                    }} >Item in Your Cart</Typography >
+                    <Box className="cartWrapper" >
                         {products.map((product) => (
-                            <div key={product.id} className="cartCard">
+                            <Box sx={{ bgcolor: '#F5F5F5', p: 2,
+                            m: 3,}} key={product.id} className="cartCard">
                                 <img src={product.image} alt="" />
-                                <h5>{product.title}</h5>
-                                <h5>{product.price}</h5>
-                                <button
+                                <Typography >{product.title}</Typography >
+                                <Typography >{product.price}</Typography >
+                                <Button
                                     className="btn"
                                     onClick={() => handleRemove(product.id)}
                                 >
                                     Remove
-                                </button>
-                            </div>
+                                </Button>
+                            </Box>
                         ))}
-                    </div>
+                    </Box>
                 </Grid>
                 <Grid item xs={12} md={4}>
-                    <Typography style={{ fontSize: 25 }}>
+                    <Typography style={{ fontSize: 25,color:'#222222' }}>
                         {'Cart Summary'}
                     </Typography>
                     <Box
@@ -44,11 +48,11 @@ const Cart = () => {
                             justifyContent: 'space-between',
                             p: 1,
                             m: 1,
-                            bgcolor: 'background.paper',
-                            borderRadius: 1,
+                           
+                            borderTop:1,borderTopColor:'#DDDDDD'
                         }}
                     >
-                        <Typography sx={{ color: '#D9AC5D' }}>
+                        <Typography sx={{ color: '#AAAAAA' }}>
                             {'$' + 'Product total'}
                         </Typography>
                         <Typography style={{ textDecorationStyle: 'solid', marginLeft: 20, }}>
@@ -65,7 +69,7 @@ const Cart = () => {
                             borderRadius: 1,
                         }}
                     >
-                        <Typography sx={{ color: '#D9AC5D' }}>
+                        <Typography sx={{ color: '#AAAAAA' }}>
                             {'Shiping'}
                         </Typography>
                         <Typography style={{ textDecorationStyle: 'solid', marginLeft: 20, }}>
@@ -78,11 +82,10 @@ const Cart = () => {
                             justifyContent: 'space-between',
                             p: 1,
                             m: 1,
-                            bgcolor: 'background.paper',
-                            borderRadius: 1,
+                             borderTop:1,borderTopColor:'#DDDDDD', borderBottom:1,borderBottomColor:'#DDDDDD'
                         }}
                     >
-                        <Typography sx={{ color: '#D9AC5D' }}>
+                        <Typography sx={{ color: '#AAAAAA', }}>
                             {'$' + 'Cart total'}
                         </Typography>
                         <Typography style={{ textDecorationStyle: 'solid', marginLeft: 20, }}>
@@ -92,10 +95,9 @@ const Cart = () => {
                     <Box sx={{
                         p: 1,
                         m: 1,
-                       
                         borderRadius: 1,
-                        border: 2,
-                        borderColor: 'red'
+                        border: 1,
+                        borderColor: '#DDDDDD'
                     }}>
                         <Box className=''
                             sx={{
@@ -103,16 +105,15 @@ const Cart = () => {
                                 justifyContent: 'space-between',
                                 p: 1,
                                 m: 1,
-                                bgcolor: 'background.paper',
-                                borderRadius: 1,
-                               
+                                borderRadius: 1,borderBottom:1,borderBottomColor:'#DDDDDD'
+
                             }}
                         >
-                            <Typography sx={{ color: '#D9AC5D' }}>
-                                {'Apply Promo code'}
+                            <Typography sx={{ color: '#222222' ,fontWeight:'bold'}}>
+                                {'Apply Promo Code'}
                             </Typography>
-                            <Typography style={{ textDecorationStyle: 'solid', marginLeft: 20, }}>
-                                {'view all'}
+                            <Typography sx={{ marginLeft: 20,textDecoration: 'underline',color:'#D9AC5D' }}>
+                                {'View all'}
                             </Typography>
                         </Box>
                         <Box className=''
@@ -126,53 +127,52 @@ const Cart = () => {
 
                             }}
                         >
-                             <TextField
-                            
-        variant="outlined"
-        size="small"
-        placeholder="Enter Promo Code"
-       
-      />
-                           <Button sx={{width:50,color:'#FFF',backgroundColor:'#D9AC5D',textTransform: 'none'}} variant="contained">Apply</Button>
- 
+                            <TextField
+
+                                variant="outlined"
+                                size="small"
+                                placeholder="Enter Promo Code"
+
+                            />
+                            <Button sx={{ width: 50, color: '#FFF', backgroundColor: '#D9AC5D', textTransform: 'none' }} variant="contained">Apply</Button>
+
                         </Box>
                     </Box>
                     <Box sx={{
                         p: 1,
                         m: 1,
-                       
                         borderRadius: 1,
-                        border: 2,
-                        borderColor: 'red'
+                        border: 1,
+                        borderColor: '#DDDDDD'
                     }}>
                         <Box className=''
                             sx={{
                                 display: 'flex',
-                               
+
                                 p: 1,
                                 m: 1,
-                               
-                                borderRadius: 1,
-                               
+                                color: '#282828' ,
+                                borderBottom:1,borderBottomColor:'#DDDDDD'
+
                             }}
                         >
-                            <Typography sx={{ color: '#D9AC5D' }}>
+                            <Typography sx={{}}>
                                 {'Bill To: '}
                             </Typography>
-                            <Typography style={{ textDecorationStyle: 'solid', marginLeft: 20, }}>
+                            <Typography style={{ marginLeft: 20,fontWeight:'bold' }}>
                                 {'John'}
                             </Typography>
                         </Box>
                         <Typography sx={{ color: '#D9AC5D' }}>
-                                {'1600 Amphitheatre Parkway Mountain View, CA 94043, USA. (650) 253-0000'}
-                            </Typography>
+                            {'1600 Amphitheatre Parkway Mountain View, CA 94043, USA. (650) 253-0000'}
+                        </Typography>
                         <Box className=''
                             sx={{
                                 display: 'flex',
                                 justifyContent: 'flex-end',
                                 p: 1,
                                 m: 1,
-                                
+
                                 borderRadius: 1,
 
                             }}
