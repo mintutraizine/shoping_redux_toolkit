@@ -1,48 +1,59 @@
-import React, { useState } from 'react'
-import { AppBar, Button, Stack, Avatar, CardMedia, useTheme, useMediaQuery, Grid, Tabs, Tab, FormControl, Select, MenuItem, Badge } from '@mui/material';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
-import imagepaths from '../static/imagepaths';
+import React, { useState } from "react";
+import {
+  AppBar,
+  Button,
+  Stack,
+  Avatar,
+  CardMedia,
+  useTheme,
+  useMediaQuery,
+  Grid,
+  Tabs,
+  Tab,
+  FormControl,
+  Select,
+  MenuItem,
+  Badge,
+} from "@mui/material";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import IconButton from "@mui/material/IconButton";
+import imagepaths from "../static/imagepaths";
 //import vibelogo from '../static/images/vibe_logo.png'
-import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
-import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import DrawerCompoenent from './DrawerCompoenent';
+import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import DrawerCompoenent from "./DrawerCompoenent";
 //import { Stack } from '@mui/system';
 const MuiNavbar = ({ navitems }) => {
   const itemQuantity = useSelector((state) => state.cart);
-  const [countyName, setcountyName] = React.useState('');
+  const [countyName, setcountyName] = React.useState("");
   const items = useSelector((state) => state.cart);
   const [tabvalue, settabValue] = useState(0);
   const theme = useTheme();
-  const isScreenSizematch = useMediaQuery(theme.breakpoints.down('md'));
-  console.log(theme)
-  console.log(isScreenSizematch)
+  const isScreenSizematch = useMediaQuery(theme.breakpoints.down("md"));
+  console.log(theme);
+  console.log(isScreenSizematch);
 
   //chnage country
   const handleCountryChange = (event) => {
     setcountyName(event.target.value);
   };
   return (
-    <Box sx={{position:'sticky',top:0}}>
-      <AppBar position="static" sx={{
-        height: 90,
-        justifyContent: 'center', backgroundColor: "#2E354D"
-      }}>
+    <Box sx={{ position: "sticky", top: 0 }}>
+      <AppBar
+        position="static"
+        sx={{
+          height: 90,
+          justifyContent: "center",
+          backgroundColor: "#2E354D",
+        }}
+      >
         <Toolbar>
-          {isScreenSizematch ? (<> <CardMedia
-            component="img"
-            sx={{
-              height: 61,
-              width: 105,
-              maxHeight: { xs: 72, md: 72 },
-              maxWidth: { xs: 110, md: 110 },
-            }}
-            src={imagepaths.newLogo}
-          /> <DrawerCompoenent /></>) : (<Grid sx={{ placeItems: 'center' }} container>
-            <Grid item xs={2}>
+          {isScreenSizematch ? (
+            <>
+              {" "}
               <CardMedia
                 component="img"
                 sx={{
@@ -52,54 +63,106 @@ const MuiNavbar = ({ navitems }) => {
                   maxWidth: { xs: 110, md: 110 },
                 }}
                 src={imagepaths.newLogo}
-              />
-            </Grid>
-            <Grid item xs={6}>
-              <Tabs value={tabvalue} textColor='inherit' indicatorColor='secondary' onChange={(e, val) => {
-                settabValue(val)
-              }}>
-                {navitems.map((item, index) => <Tab sx={{ textTransform: 'none' }} component={Link}
-                  to={{
-                    pathname: item.Path,
-                  }} key={index} label={item.ScreenName} />)}
-              </Tabs>
-
-            </Grid>
-            <Grid item xs={1} />
-            <Grid item xs={3}>
-              <Box sx={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center',}}>
-                <Badge sx={{m:1}} badgeContent={itemQuantity.length} color="primary">
-                  <IconButton component={Link}
-                    to={{
-                      pathname: '/cart',
-                    }} sx={{ color: 'white' }}>
-                    <ShoppingCartCheckoutIcon />
-                  </IconButton>
-                </Badge>
-
-                <FormControl size="small" sx={{ m: 1, minWidth: 80 }}>
-                  <Select
-                    inputProps={{ 'aria-label': 'Without label' }}
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    value={countyName}
-                    onChange={handleCountryChange}
+              />{" "}
+              <DrawerCompoenent />
+            </>
+          ) : (
+            <Grid sx={{ placeItems: "center" }} container>
+              <Grid item xs={2}>
+                <CardMedia
+                  component="img"
+                  sx={{
+                    height: 61,
+                    width: 105,
+                    maxHeight: { xs: 72, md: 72 },
+                    maxWidth: { xs: 110, md: 110 },
+                  }}
+                  src={imagepaths.newLogo}
+                />
+              </Grid>
+              <Grid item xs={6}>
+                <Tabs
+                  value={tabvalue}
+                  textColor="inherit"
+                  indicatorColor="secondary"
+                  onChange={(e, val) => {
+                    settabValue(val);
+                  }}
+                >
+                  {navitems.map((item, index) => (
+                    <Tab
+                      sx={{ textTransform: "none" }}
+                      component={Link}
+                      to={{
+                        pathname: item.Path,
+                      }}
+                      key={index}
+                      label={item.ScreenName}
+                    />
+                  ))}
+                </Tabs>
+              </Grid>
+              <Grid item xs={1} />
+              <Grid item xs={3}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "flex-end",
+                    alignItems: "center",
+                  }}
+                >
+                  <Badge
+                    sx={{ m: 1 }}
+                    badgeContent={itemQuantity.length}
+                    color="primary"
                   >
-                    <MenuItem value={1}>1</MenuItem>
-                    <MenuItem value={2}>2</MenuItem>
-                    <MenuItem value={3}>3</MenuItem>
-                  </Select>
-                </FormControl>
-                <Button sx={{ m:1,textTransform: 'none', backgroundColor: "#D9AC5D", color: 'white', width: 100, height: 40 }} size='small'>Sign In</Button>
-              </Box>
-            </Grid>
-          </Grid>)}
+                    <IconButton
+                      component={Link}
+                      to={{
+                        pathname: "/cart",
+                      }}
+                      sx={{ color: "white" }}
+                    >
+                      <ShoppingCartCheckoutIcon />
+                    </IconButton>
+                  </Badge>
 
+                  <FormControl size="small" sx={{ m: 1, minWidth: 80 }}>
+                    <Select
+                      inputProps={{ "aria-label": "Without label" }}
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      value={countyName}
+                      onChange={handleCountryChange}
+                    >
+                      <MenuItem value={1}>1</MenuItem>
+                      <MenuItem value={2}>2</MenuItem>
+                      <MenuItem value={3}>3</MenuItem>
+                    </Select>
+                  </FormControl>
+                  <Button
+                    component={Link}
+                    to="/SignInScreen"
+                    sx={{
+                      m: 1,
+                      textTransform: "none",
+                      backgroundColor: "#D9AC5D",
+                      color: "white",
+                      width: 100,
+                      height: 40,
+                    }}
+                    size="small"
+                  >
+                    Sign In
+                  </Button>
+                </Box>
+              </Grid>
+            </Grid>
+          )}
         </Toolbar>
       </AppBar>
     </Box>
-  )
-}
-
+  );
+};
 
 export default MuiNavbar;
