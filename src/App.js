@@ -14,6 +14,7 @@ import SignInScreen from "./pages/SignInscreen/SignInScreen";
 
 import SignupScreen from "./pages/SignupScreen/SignupScreen";
 import OtpScreen from "./pages/OtpScreen/OtpScreen";
+import Footer from "./components/Footer";
 const navitmelist = [
   { ScreenName: "Home", Path: "/" },
   { ScreenName: "About Us", Path: "/Services" },
@@ -42,6 +43,7 @@ function App() {
               <Route path="/SignupScreen" element={<SignupScreen />}></Route>
               <Route path="/OtpScreen" element={<OtpScreen />}></Route>
             </Routes>
+            <Footer/>
           </BrowserRouter>
         </PersistGate>
       </Provider>
