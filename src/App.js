@@ -14,7 +14,6 @@ import SignInScreen from "./pages/SignInscreen/SignInScreen";
 
 import SignupScreen from "./pages/SignupScreen/SignupScreen";
 import OtpScreen from "./pages/OtpScreen/OtpScreen";
-import Footer from "./components/Footer";
 const navitmelist = [
   { ScreenName: "Home", Path: "/" },
   { ScreenName: "About Us", Path: "/Services" },
@@ -43,10 +42,26 @@ function App() {
               <Route path="/SignupScreen" element={<SignupScreen />}></Route>
               <Route path="/OtpScreen" element={<OtpScreen />}></Route>
             </Routes>
-            <Footer/>
           </BrowserRouter>
         </PersistGate>
       </Provider>
+    </div>
+  );
+}
 
-    </div>)}
+/*  return (
+        <div className="App">
+            <Provider store={store}>
+                <PersistGate persistor={persister} loading={null}>
+                <BrowserRouter>
+                    <Navbar />
+                    <Routes>
+                        <Route path="/" element={<Home />}></Route>
+                        <Route path="/cart" element={<Cart />}></Route>
+                    </Routes>
+                </BrowserRouter>
+                </PersistGate>
+            </Provider>
+        </div>
+    ); */
 export default App;
