@@ -42,121 +42,120 @@ const ProductDetails = () => {
   return (
 
     <>
-    <Box >
-      <Grid container  p={10}>
-        <Grid item xs={12} md={5}>
-          <Box
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
+      <Box >
+        <Grid container p={10}>
+          <Grid item xs={12} md={5}>
+            <Box
+              display="flex"
+              justifyContent="center"
+              alignItems="center"
 
-            sx={{
-              width: 500,
-              height: 500,
-              backgroundColor: 'primary.dark',
-              '&:hover': {
-                backgroundColor: 'primary.main',
-                opacity: [0.9, 0.8, 0.7],
-              },
-            }}
-
-          >
-            <CardMedia
-              component="img"
               sx={{
-                height: 270,
-                width: 305,
-                maxHeight: { xs: 270, md: 270 },
-                maxWidth: { xs: 305, md: 305 },
+                width: 500,
+                height: 500,
+                backgroundColor: 'primary.dark',
+                '&:hover': {
+                  backgroundColor: 'primary.main',
+                  opacity: [0.9, 0.8, 0.7],
+                },
               }}
-              src={state.data.image}
-            />
-          </Box>
-        </Grid>
-        <Grid item xs={12} md={7}>
-          <Box
-            sx={{
-              width: '80%',
-              height: 500,
-              backgroundColor: 'primary',
-              '&:hover': {
+            >
+              <CardMedia
+                component="img"
+                sx={{
+                  height: 270,
+                  width: 305,
+                  maxHeight: { xs: 270, md: 270 },
+                  maxWidth: { xs: 305, md: 305 },
+                }}
+                src={state.data.image}
+              />
+            </Box>
+          </Grid>
+          <Grid item xs={12} md={7}>
+            <Box
+              sx={{
+                width: '80%',
+                height: 500,
                 backgroundColor: 'primary',
-                opacity: [0.9, 0.8, 0.7],
-              },
-            }}
-          >
-            <Typography style={{ fontSize: 25 }}>
-              {state.data.title}
-            </Typography>
-            <Typography >
-              {state.data.category}
-            </Typography>
-            <Stack flexDirection={'row'} >
-              <Typography sx={{ color: '#D9AC5D' }}>
-                {'$' + state.data.price}
+                '&:hover': {
+                  backgroundColor: 'primary',
+                  opacity: [0.9, 0.8, 0.7],
+                },
+              }}
+            >
+              <Typography style={{ fontSize: 25 }}>
+                {state.data.title}
               </Typography>
-              <Typography style={{ textDecorationLine: 'line-through', textDecorationStyle: 'solid', marginLeft: 20, }}>
-                {'$' + state.data.price}
+              <Typography >
+                {state.data.category}
               </Typography>
-            </Stack>
+              <Stack flexDirection={'row'} >
+                <Typography sx={{ color: '#D9AC5D' }}>
+                  {'$' + state.data.price}
+                </Typography>
+                <Typography style={{ textDecorationLine: 'line-through', textDecorationStyle: 'solid', marginLeft: 20, }}>
+                  {'$' + state.data.price}
+                </Typography>
+              </Stack>
 
-            <Stack direction={'row'} spacing={1}>
-              {colorarr.map((item, index) =>
-                <Radio
-                  {...controlProps(item.colorname)}
-                  label="CircleTwoToneIcon"
-                  checkedIcon={<Box sx={{
-                    display: 'flex', borderRadius: '50%', height: 33, width: 33, border: 2, borderColor: '#D9AC5D', alignItems: 'center',
-                    justifyContent: 'center',
-                  }}>
-                    <Box sx={{
+              <Stack direction={'row'} spacing={1}>
+                {colorarr.map((item, index) =>
+                  <Radio
+                    {...controlProps(item.colorname)}
+                    label="CircleTwoToneIcon"
+                    checkedIcon={<Box sx={{
+                      display: 'flex', borderRadius: '50%', height: 33, width: 33, border: 2, borderColor: '#D9AC5D', alignItems: 'center',
+                      justifyContent: 'center',
+                    }}>
+                      <Box sx={{
+                        borderRadius: '50%', width: 30, backgroundColor: item.colorcode,
+                        height: 30,
+                      }}>
+                      </Box>
+                    </Box>}
+                    icon={<Box sx={{
                       borderRadius: '50%', width: 30, backgroundColor: item.colorcode,
                       height: 30,
-                    }}>
-                    </Box>
-                  </Box>}
-                  icon={<Box sx={{
-                    borderRadius: '50%', width: 30, backgroundColor: item.colorcode,
-                    height: 30,
-                  }} >
-                  </Box>}
-                />
+                    }} >
+                    </Box>}
+                  />
 
 
-              )}
+                )}
 
 
-            </Stack>
-            <Typography style={{ textDecorationStyle: 'solid', marginLeft: 20, }}>
-              {'Color: ' + selectedValue}
-            </Typography>
+              </Stack>
+              <Typography style={{ textDecorationStyle: 'solid', marginLeft: 20, }}>
+                {'Color: ' + selectedValue}
+              </Typography>
 
-            <FormControl size="small" sx={{ m: 1, minWidth: 80 }}>
-              <Select
-                inputProps={{ 'aria-label': 'Without label' }}
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value={ItemQuantity}
-                onChange={handleItemchange}
-              >
-                <MenuItem value={1}>1</MenuItem>
-                <MenuItem value={2}>2</MenuItem>
-                <MenuItem value={3}>3</MenuItem>
-              </Select>
-            </FormControl>
-            <Button onClick={() => handleAdd(state.data)} sx={{ width: 200, color: '#FFF', backgroundColor: '#D9AC5D', textTransform: 'none' }} variant="contained">Add to cart</Button>
+              <FormControl size="small" sx={{ m: 1, minWidth: 80 }}>
+                <Select
+                  inputProps={{ 'aria-label': 'Without label' }}
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                  value={ItemQuantity}
+                  onChange={handleItemchange}
+                >
+                  <MenuItem value={1}>1</MenuItem>
+                  <MenuItem value={2}>2</MenuItem>
+                  <MenuItem value={3}>3</MenuItem>
+                </Select>
+              </FormControl>
+              <Button onClick={() => handleAdd(state.data)} sx={{ width: 200, color: '#FFF', backgroundColor: '#D9AC5D', textTransform: 'none' }} variant="contained">Add to cart</Button>
 
-            <Typography style={{ textDecorationStyle: 'solid', marginLeft: 20, }}>
-              {'Delivery byby1by2: ' + 'Wednesday 3 apirlll 20323'}
-            </Typography>
-           
-          </Box>
+              <Typography style={{ textDecorationStyle: 'solid', marginLeft: 20, }}>
+                {'Delivery by: ' + 'Wednesday 3 apirlll 20323'}
+              </Typography>
+
+            </Box>
+
+          </Grid>
+
+
 
         </Grid>
-
-
-     
-      </Grid>
 
       <Box sx={{backgroundColor:'#F5F5F5',p:2,m:2}}>
   <Stack  flexDirection={'row'}>
@@ -177,10 +176,14 @@ const ProductDetails = () => {
     </Stack>
  
             <Typography style={{ marginLeft: 10, fontWeight: 'bold', color: '#000000' }}>
-              {'Available Music Album with This Headphone '}
+              {'6 Month Warranty'}
             </Typography>
+    </Stack>
+    <Stack flexDirection={'row'} justifyContent={{ xs: 'flex-start', md: 'space-around' }}
+  alignItems="center">
+    <img src={imagepaths.Secure_Checkout}/>
             <Typography style={{ marginLeft: 10, fontWeight: 'bold', color: '#000000' }}>
-              {'Available Music Album with This Headphone '}
+              {'Customer Support'}
             </Typography>
   </Stack>
 </Box>
@@ -190,7 +193,7 @@ const ProductDetails = () => {
               {'Available Music Album with This Headphone '}
             </Typography>
             <Typography style={{ marginLeft: 10, fontWeight: 'bold', color: '#000000' }}>
-              {'Available Music Album with This Headphone '}
+              {state.data.description}
             </Typography>
             <Typography style={{ marginLeft: 10, fontWeight: 'bold', color: '#000000' }}>
               {'Available Music Album with This Headphone '}
