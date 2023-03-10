@@ -10,6 +10,7 @@ import MuiNavbar from './components/MuiNavbar';
 import ProductDetails from './pages/productdetails/ProductDetails';
 import Cart from './pages/cartScreen/Cart';
 import ContactUs from './pages/ContactUs/ContactUs';
+import Footer from './components/Footer';
 const navitmelist=[{ScreenName:'Home',Path:'/'},{ScreenName:'About Us',Path:'/Services'},
 {ScreenName:'Showcase',Path:'/Services'},{ScreenName:'Headphones',Path:'/'},
 {ScreenName:'Merchandise',Path:'/Services'},{ScreenName:'Contact Us',Path:'/contactus'}]
@@ -27,6 +28,7 @@ function App() {
                     <Route path="/productdetails" element={<ProductDetails />}></Route>
                     <Route path="/contactus" element={<ContactUs />}></Route>
                 </Routes>
+                <Footer/>
             </BrowserRouter>
             </PersistGate>
         </Provider>
