@@ -20,10 +20,10 @@ function Copyright() {
                     {'.'} All rights reserved {'.'}
                 </Typography>
                 <Box className="social-media-icons-cont">
-                    <img src={imagepaths.Youtube_icon} className="cursor icon" />
-                    <img src={imagepaths.Instagram_icon} className="cursor icon" />
-                    <img src={imagepaths.Facebook_icon} className="cursor icon" />
-                    <img src={imagepaths.Twitter_icon} className="cursor icon" />
+                    <img src={imagepaths.Youtube_icon} className="cursor icon" alt="Youtube Icon" />
+                    <img src={imagepaths.Instagram_icon} className="cursor icon" alt="Instagram Icon" />
+                    <img src={imagepaths.Facebook_icon} className="cursor icon" alt="Facebook Icon" />
+                    <img src={imagepaths.Twitter_icon} className="cursor icon" alt="Twitter Icon" />
                 </Box>
             </Box>
         </Box >
@@ -37,7 +37,7 @@ export default function Footer() {
                 <Grid container className="grid-main-cont">
                     <Grid item xs={12} sm={6} md={7}>
                         <Box className="footer-left-box">
-                            <img src={imagepaths.VibeWorldLogo} className="VibeWorldLogo" />
+                            <img src={imagepaths.VibeWorldLogo} className="VibeWorldLogo" alt="VibeWorldLogo" />
 
                             <Box>
                                 <Typography
@@ -93,10 +93,10 @@ export default function Footer() {
                         </Box>
                         <Box className="footer-icons-cont">
                             <Box className="google-play-icon-cont">
-                                <img src={imagepaths.Google_Play_Icon} className="cursor google-play-icon" />
+                                <img src={imagepaths.Google_Play_Icon} className="cursor google-play-icon" alt="Google Play Icon" />
                             </Box>
                             <Box sx={{ margin: "10px" }}>
-                                <img src={imagepaths.App_Store_Icon} className="cursor app-store" />
+                                <img src={imagepaths.App_Store_Icon} className="cursor app-store" alt="App Store Icon" />
                             </Box>
                         </Box>
                     </Grid>

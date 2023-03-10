@@ -111,7 +111,191 @@
     object-fit: contain;
 }
 
-@media only screen and (max-width: 768px) and (min-width:501px) {
+@media only screen and (max-width:1070px) and (min-width:900px) {
+    .download-music-title {
+        margin: 20px 45px;
+    }
+
+    .footer-icons-cont {
+        margin: 20px 20px;
+    }
+
+    .VibeWorldLogo {
+        padding: 10px 40px;
+    }
+
+
+}
+
+@media only screen and (max-width:899px) and (min-width:801px) {
+    .VibeWorldLogo {
+        padding: 10px 0px;
+    }
+
+    .download-music-title {
+        font-size: 12px;
+    }
+
+    .google-play-icon,
+    .app-store {
+        width: 140px;
+    }
+
+    .download-music-title {
+        font-size: 18px;
+        margin: 20px 80px;
+    }
+
+    .footer-icons-cont {
+        margin: 20px 60px;
+    }
+
+}
+
+
+@media only screen and (max-width:800px) and (min-width:770px) {
+    .footer-left-box {
+        text-align: center;
+    }
+
+    .grid-main-cont {
+        padding: 10px;
+    }
+
+    .VibeWorldLogo {
+        padding: 0px 10px;
+        width: 100px;
+    }
+
+    .download-music-title {
+        font-size: 14px;
+        margin: 10px 0px;
+        text-align: center;
+        font-size: 14px;
+        margin: 20px 0px 0px 0px;
+        text-align: center;
+    }
+
+    .footer-icons-cont {
+        margin: 0px 0px;
+        justify-content: center;
+    }
+
+    .footer-heading {
+        font-size: 16px !important;
+        line-height: 18px !important;
+        margin: 20px 30px !important;
+    }
+
+    .footer-list {
+        font-size: 12px !important;
+        margin: 10px 15px !important;
+        text-align: center !important;
+    }
+
+    .google-play-icon {
+        width: 100px;
+    }
+
+    .app-store {
+        width: 100px;
+    }
+
+    .copyright-sec-cont {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .copyright-text {
+        text-align: center !important;
+        font-size: 10px !important;
+    }
+
+    .social-media-icons-cont {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .social-media-icons-cont img {
+        margin: 5px;
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+    }
+}
+
+@media only screen and (max-width:769px) and (min-width:600px) {
+    .footer-left-box {
+        text-align: center;
+    }
+
+    .grid-main-cont {
+        padding: 10px;
+    }
+
+    .VibeWorldLogo {
+        padding: 0px 10px;
+        width: 100px;
+    }
+
+    .download-music-title {
+        text-align: center;
+        font-size: 14px;
+        margin: 20px 0px 0px 26px;
+    }
+
+    .footer-icons-cont {
+        margin: 0px 0px;
+        justify-content: center;
+    }
+
+    .footer-heading {
+        font-size: 16px !important;
+        line-height: 18px !important;
+        margin: 20px 30px !important;
+    }
+
+    .footer-list {
+        font-size: 12px !important;
+        margin: 10px 15px !important;
+        text-align: center !important;
+    }
+
+    .google-play-icon {
+        width: 100px;
+    }
+
+    .app-store {
+        width: 100px;
+    }
+
+    .copyright-sec-cont {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .copyright-text {
+        text-align: center !important;
+        font-size: 10px !important;
+    }
+
+    .social-media-icons-cont {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .social-media-icons-cont img {
+        margin: 5px;
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+    }
+}
+
+@media only screen and (max-width: 599px) and (min-width:501px) {
+    .footer-left-box {
+        text-align: center;
+    }
 
     .grid-main-cont {
         padding: 10px;
@@ -125,17 +309,20 @@
         font-size: 14px;
         margin: 10px 0px;
         text-align: center;
+        font-size: 14px;
+        margin: 20px 0px 0px 0px;
+        text-align: center;
     }
 
     .footer-icons-cont {
-        margin: 10px 0px;
+        margin: 0px 0px;
         justify-content: center;
     }
 
     .footer-heading {
         font-size: 16px !important;
         line-height: 18px !important;
-        margin: 20px 39px !important;
+        margin: 20px 30px !important;
     }
 
     .footer-list {
