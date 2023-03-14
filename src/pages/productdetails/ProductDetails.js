@@ -44,7 +44,7 @@ const ProductDetails = () => {
     <>
     <Box >
       <Grid container  p={10}>
-        <Grid item xs={12} md={5}>
+        <Grid item xs={12} md={6}>
           <Box
             display="flex"
             justifyContent="center"
@@ -73,7 +73,7 @@ const ProductDetails = () => {
             />
           </Box>
         </Grid>
-        <Grid item xs={12} md={7}>
+        <Grid item xs={12} md={6}>
           <Box
             sx={{
               width: '80%',
