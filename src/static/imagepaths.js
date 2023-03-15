@@ -3,7 +3,7 @@ const imagepaths = {
   Secure_Checkout: require("./images/Secure_Checkout.png"),
   appleIcon: require("./images/apple.png"),
   backgroundimage: require("./images/background.png"),
-  facebookIcon: require("./images/facebook.png"),
+  facebookIcon: require("./images/Facebook.png"),
   googleIcon: require("./images/Google.png"),
   otpBackground: require("./images/otpbackground.png"),
   Youtube_icon: require("./images/Youtube.png"),
