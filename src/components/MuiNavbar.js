@@ -41,7 +41,7 @@ const MuiNavbar = ({ navitems }) => {
     setcountyName(event.target.value);
   };
   return (
-    <Box sx={{ position: "sticky", top: 0 }}>
+    <Box sx={{ position: "sticky", top: 0,zIndex:2 }}>
       <AppBar
         position="static"
         sx={{

@@ -15,6 +15,7 @@ const Products = () => {
     const { data, status } = useSelector((state) => state.product);
     const { catedata } = useSelector((state) => state.product);
 
+    console.log(data,"data");
     useEffect(() => {
         dispatch(fetchProducts());
         dispatch(fetchProducts1());
@@ -88,7 +89,7 @@ const Products = () => {
                 <Grid container spacing={2}>
                     {data.map((product, index) => index < 6 && (
                         <Grid item xs={6} sm={4} md={2} lg={2} sx={{ textAlign: 'center' }} key="index" className="grid-cont">
-                            <Card sx={{ minWidth: 200, height: 270, display: "flex", flexDirection: "column", justifyContent: "space-between", border: "1px solid #DDDDDD", borderRadius: "16px" }} className="card-main-cont">
+                            <Card sx={{ minWidth: 180, height: 270, display: "flex", flexDirection: "column", justifyContent: "space-between", border: "1px solid #DDDDDD", borderRadius: "16px" }} className="card-main-cont">
                                 <Box sx={{ backgroundColor: "#F5F5F5" }}>
                                     <img src={product.image} alt="" style={{ height: "100px", width: "160px", objectFit: "contain" }} />
                                 </Box>
@@ -148,7 +149,7 @@ const Products = () => {
                 <Grid container spacing={2}>
                     {data.map((product, index) => index < 6 && (
                         <Grid item xs={6} sm={4} md={2} lg={2} sx={{ textAlign: 'center' }} key="index" className="grid-cont">
-                            <Card sx={{ minWidth: 200, height: 270, display: "flex", flexDirection: "column", justifyContent: "space-between", border: "1px solid #DDDDDD", borderRadius: "16px" }} className="card-main-cont">
+                            <Card sx={{ minWidth: 180, height: 270, display: "flex", flexDirection: "column", justifyContent: "space-between", border: "1px solid #DDDDDD", borderRadius: "16px" }} className="card-main-cont">
                                 <Box sx={{ backgroundColor: "#F5F5F5" }}>
                                     <img src={product.image} alt="" style={{ height: "100px", width: "160px", objectFit: "contain" }} />
                                 </Box>

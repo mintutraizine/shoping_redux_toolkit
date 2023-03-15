@@ -6,8 +6,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { remove } from '../../store/cartSlice';
 import cartstyle from './style';
-import style from './style';
-//import "./cart.css";
+import "./cart.css";
 const Cart = () => {
     const dispatch = useDispatch();
     const products = useSelector((state) => state.cart);
@@ -40,7 +39,7 @@ const Cart = () => {
                                 <Box sx={cartstyle.productdetailsbox}>
                                     <Stack>
                                         <Typography sx={{fontSize: { xs: 12, sm: 15, md: 20, lg: 22 }}}>{product.title}</Typography >
-                                        <Typography sx={{ marginTop: 0.2,fontSize: { xs: 12, sm: 15, md: 20, lg: 22 } }}>{'color: ' + product.price}</Typography >
+                                        <Typography  sx={{ marginTop: 0.2,fontSize: { xs: 12, sm: 15, md: 20, lg: 22 } }}>{'color: ' + product.price}</Typography >
                                         <Stack sx={{
                                             width: '100%', flexDirection: 'row',
                                             justifyContent: 'space-between', alignItems: 'center'
@@ -61,7 +60,7 @@ const Cart = () => {
                                                 </Select>
                                             </FormControl>
 
-                                            <Typography sx={{ color: '#D9AC5D', marginTop: 1, fontWeight: '600',fontSize: { xs: 15, sm: 15, md: 18, lg: 22 } }}>{'$' + product.price}</Typography >
+                                            <Typography className='productprice' sx={{ color: '#D9AC5D', marginTop: 1,fontSize: { xs: 15, sm: 15, md: 18, lg: 22 } }}>{'$' + product.price}</Typography >
                                         </Stack>
                                         <Button
                                             sx={cartstyle.removebutton}

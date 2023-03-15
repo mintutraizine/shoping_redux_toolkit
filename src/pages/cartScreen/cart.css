@@ -1,6 +1,11 @@
 .cartWrapper{
     background-color: red;
 }
+ .productprice{
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    color: #D9AC5D;
+} 
 /* .pricetext{
 font-family: 'Inter';
 font-style: normal;
