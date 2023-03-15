@@ -7,20 +7,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     background: whitesmoke;
 }
-img {
-    height: 80px;
-}
-.card {
-    background: white;
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-}
-.productsWrapper {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-}
+
 .btn {
     border: none;
     outline: none;
@@ -40,11 +27,13 @@ img {
 .heading {
     padding: 25px 0;
 }
+
 .cartCount {
     font-weight: bold;
     text-transform: uppercase;
     margin-left: 40px;
 }
+
 .navLink {
     text-decoration: none;
     color: black;

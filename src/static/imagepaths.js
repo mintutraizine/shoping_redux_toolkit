@@ -12,7 +12,9 @@ const imagepaths = {
   Twitter_icon: require("./images/Twitter.png"),
   Google_Play_Icon: require("./images/GooglePlay.png"),
   App_Store_Icon: require("./images/AppStore.png"),
-  VibeWorldLogo:require("./images/VibeWorldLogo.png")
+  VibeWorldLogo: require("./images/VibeWorldLogo.png"),
+  headphoneBanner1: require("./images/headphoneBanner1.png"),
+  headphoneBanner2: require("./images/headphoneBanner2.png")
 };
 
 export default imagepaths;
