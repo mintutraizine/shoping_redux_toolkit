@@ -45,7 +45,7 @@ const MuiNavbar = ({ navitems }) => {
       <AppBar
         position="static"
         sx={{
-          height: 90,
+          height: { xs: 70, sm: 80, md: 90, lg: 90 },
           justifyContent: "center",
           backgroundColor: "#2E354D",
         }}
@@ -53,18 +53,38 @@ const MuiNavbar = ({ navitems }) => {
         <Toolbar>
           {isScreenSizematch ? (
             <>
+            <Stack direction={'row'} sx={{alignItems:'center',justifyContent:'space-between',width:'100%',}}>
+              <Stack direction={'row'}>
+            <DrawerCompoenent draweritems={navitems}  />
               {" "}
               <CardMedia
                 component="img"
                 sx={{
-                  height: 61,
-                  width: 105,
+                  height: 34,
+                  width: 53,
                   maxHeight: { xs: 72, md: 72 },
                   maxWidth: { xs: 110, md: 110 },
                 }}
-                src={imagepaths.newLogo}
-              />{" "}
-              <DrawerCompoenent />
+                src={imagepaths.vibe_app_logo}
+              />
+              </Stack>
+
+               <Badge
+                    sx={{ m: 1 }}
+                    badgeContent={itemQuantity.length}
+                    color="primary"
+                  >
+                    <IconButton
+                      component={Link}
+                      to={{
+                        pathname: "/cart",
+                      }}
+                      sx={{ color: "white" }}
+                    >
+                      <ShoppingCartCheckoutIcon />
+                    </IconButton>
+                  </Badge>
+                  </Stack>
             </>
           ) : (
             <Grid sx={{ placeItems: "center" }} container>
@@ -112,7 +132,7 @@ const MuiNavbar = ({ navitems }) => {
                   }}
                 >
                   <Badge
-                    sx={{ m: 1 }}
+                    sx={{ m: 1,marginLeft:'auto' }}
                     badgeContent={itemQuantity.length}
                     color="primary"
                   >

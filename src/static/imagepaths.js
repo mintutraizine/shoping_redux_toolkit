@@ -14,7 +14,8 @@ const imagepaths = {
   App_Store_Icon: require("./images/AppStore.png"),
   VibeWorldLogo: require("./images/VibeWorldLogo.png"),
   headphoneBanner1: require("./images/headphoneBanner1.png"),
-  headphoneBanner2: require("./images/headphoneBanner2.png")
+  headphoneBanner2: require("./images/headphoneBanner2.png"),
+  vibe_app_logo: require("./images/vibe_app_logo.png")
 };
 
 export default imagepaths;
