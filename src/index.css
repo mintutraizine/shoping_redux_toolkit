@@ -3,7 +3,7 @@ body {
     background: white;
 }
 #root{
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', sans-serif !important;
    /*  font-weight: 900;
     color: #D9AC5D; */
 }

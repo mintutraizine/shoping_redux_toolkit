@@ -9,10 +9,10 @@ import ProductDetails from "./pages/productdetails/ProductDetails";
 import Cart from "./pages/cartScreen/Cart";
 import ContactUs from "./pages/ContactUs/ContactUs";
 import SignInScreen from "./pages/SignInscreen/SignInScreen";
-
 import SignupScreen from "./pages/SignupScreen/SignupScreen";
 import OtpScreen from "./pages/OtpScreen/OtpScreen";
 import Footer from "./components/Footer";
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 const navitmelist = [
   { ScreenName: "Home", Path: "/" },
   { ScreenName: "About Us", Path: "/Services" },
@@ -22,8 +22,14 @@ const navitmelist = [
   { ScreenName: "Contact Us", Path: "/contactus" },
 ];
 
+const THEME = createTheme({
+  typography: {
+   "fontFamily": `'Inter', sans-serif`,
+  }
+});
 function App() {
   return (
+    <ThemeProvider theme={THEME}>
     <div className="App">
       <Provider store={store}>
         <PersistGate persistor={persistor} loading={null}>
@@ -46,6 +52,7 @@ function App() {
         </PersistGate>
       </Provider>
     </div>
+    </ThemeProvider>
   );
 }
 
