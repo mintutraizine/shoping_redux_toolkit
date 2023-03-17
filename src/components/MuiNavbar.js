@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import ReactFlagsSelect from "react-flags-select";
+import CountryDropdown from 'country-dropdown-with-flags-for-react'; 
 import {
   AppBar,
   Button,
@@ -25,6 +27,7 @@ import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import DrawerCompoenent from "./DrawerCompoenent";
+import "./Footer.css";
 //import { Stack } from '@mui/system';
 const MuiNavbar = ({ navitems }) => {
   const itemQuantity = useSelector((state) => state.cart);
@@ -36,6 +39,7 @@ const MuiNavbar = ({ navitems }) => {
   console.log(theme);
   console.log(isScreenSizematch);
 
+  const [selected, setSelected] = useState("");
   //chnage country
   const handleCountryChange = (event) => {
     setcountyName(event.target.value);
@@ -162,8 +166,8 @@ const MuiNavbar = ({ navitems }) => {
                     </IconButton>
                   </Badge>
 
-                  <FormControl size="small" sx={{ m: 1, minWidth: 80 }}>
-                    <Select
+                  <FormControl size="small" sx={{ m: 1,width:60 }}>
+                    {/* <Select
                       inputProps={{ "aria-label": "Without label" }}
                       labelId="demo-simple-select-label"
                       id="demo-simple-select"
@@ -173,7 +177,12 @@ const MuiNavbar = ({ navitems }) => {
                       <MenuItem value={1}>1</MenuItem>
                       <MenuItem value={2}>2</MenuItem>
                       <MenuItem value={3}>3</MenuItem>
-                    </Select>
+                    </Select> */}
+                    {/* <ReactFlagsSelect
+                      selected={selected}
+                      onSelect={(code) => setSelected(code)}
+                    /> */}
+                    <CountryDropdown  id="UNIQUE_ID" className='YOUR_CSS_CLASS'  value=""></CountryDropdown>  
                   </FormControl>
                   <Button
                     component={Link}
