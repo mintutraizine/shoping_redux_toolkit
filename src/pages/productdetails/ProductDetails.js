@@ -44,15 +44,15 @@ const ProductDetails = () => {
     <>
     <Box >
       <Grid container  p={10}>
-        <Grid item xs={12} md={5}>
+        <Grid item xs={12} md={6}>
           <Box
             display="flex"
             justifyContent="center"
             alignItems="center"
 
             sx={{
-              width: 500,
-              height: 500,
+              width: { xs: 300, md:500 },
+              height: { xs: 300, md:500 },
               backgroundColor: 'primary.dark',
               '&:hover': {
                 backgroundColor: 'primary.main',
@@ -73,7 +73,7 @@ const ProductDetails = () => {
             />
           </Box>
         </Grid>
-        <Grid item xs={12} md={7}>
+        <Grid item xs={12} md={6}>
           <Box
             sx={{
               width: '80%',
@@ -159,42 +159,49 @@ const ProductDetails = () => {
       </Grid>
 
       <Box sx={{backgroundColor:'#F5F5F5',p:2,m:2}}>
-  <Stack  flexDirection={'row'}>
-    <Stack flexDirection={'row'}>
-    <CardMedia
-            component="img"
-            sx={{
-              height: 61,
-              width: 61,
-              maxHeight: { xs: 61, md: 61 },
-              maxWidth: { xs: 61, md: 61 },
-            }}
-            src={imagepaths.Secure_Checkout}
-          />
+  <Stack   direction={{ xs: 'column', md: 'row' }}
+  spacing={{ xs: 1, sm: 2, md: 4 }} justifyContent={{ xs: 'flex-start', md: 'space-around' }}>
+    <Stack direction={'row'} justifyContent={{ xs: 'flex-start', md: 'space-around' }}
+  alignItems="center">
+    <img src={imagepaths.Secure_Checkout}/>
             <Typography style={{ marginLeft: 10, fontWeight: 'bold', color: '#000000' }}>
-              {'Available Music Album with This Headphone '}
+              {'Secure Checkout'}
+            </Typography>
+    </Stack>
+    <Stack direction={'row'}  justifyContent={{ xs: 'flex-start', md: 'space-around' }}
+  alignItems="center">
+    <img src={imagepaths.Secure_Checkout}/>
+            <Typography style={{ marginLeft: 10, fontWeight: 'bold', color: '#000000' }}>
+              {'7 Days Replacement'}
+            </Typography>
+    </Stack>
+    <Stack flexDirection={'row'} justifyContent={{ xs: 'flex-start', md: 'space-around' }}
+  alignItems="center">
+    <img src={imagepaths.Secure_Checkout}/>
+            <Typography style={{ marginLeft: 10, fontWeight: 'bold', color: '#000000' }}>
+              {'6 Month Warranty'}
+            </Typography>
+    </Stack>
+    <Stack flexDirection={'row'} justifyContent={{ xs: 'flex-start', md: 'space-around' }}
+  alignItems="center">
+    <img src={imagepaths.Secure_Checkout}/>
+            <Typography style={{ marginLeft: 10, fontWeight: 'bold', color: '#000000' }}>
+              {'Customer Support'}
             </Typography>
     </Stack>
  
-            <Typography style={{ marginLeft: 10, fontWeight: 'bold', color: '#000000' }}>
-              {'Available Music Album with This Headphone '}
-            </Typography>
-            <Typography style={{ marginLeft: 10, fontWeight: 'bold', color: '#000000' }}>
-              {'Available Music Album with This Headphone '}
-            </Typography>
+          
   </Stack>
 </Box>
 <Box  p={10}>
   <Stack>
   <Typography style={{ marginLeft: 10, fontWeight: 'bold', color: '#000000' }}>
-              {'Available Music Album with This Headphone '}
+              {'Discription'}
             </Typography>
             <Typography style={{ marginLeft: 10, fontWeight: 'bold', color: '#000000' }}>
-              {'Available Music Album with This Headphone '}
+              {state.data.description}
             </Typography>
-            <Typography style={{ marginLeft: 10, fontWeight: 'bold', color: '#000000' }}>
-              {'Available Music Album with This Headphone '}
-            </Typography>
+          
   </Stack>
 </Box>
       </Box>

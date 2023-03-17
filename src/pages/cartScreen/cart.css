@@ -1,3 +1,17 @@
 .cartWrapper{
     background-color: red;
 }
+/* .titletypo{
+    font-weight: 600 !important;
+} */
+ .productprice{
+    color: #D9AC5D;
+} 
+/* .pricetext{
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+line-height: 29px;
+color: #D9AC5D;
+} */

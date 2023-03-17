@@ -1,0 +1,435 @@
+.footer-main-cont {
+    display: flex;
+    flex-direction: column;
+    /* min-height: 100vh; */
+    color: white;
+    /* margin-top: 100px; */
+}
+
+.footer-cont {
+    /* margin-top: auto; */
+    margin-top: 20px;
+    background-color: #2e354d;
+}
+
+.grid-main-cont {
+    padding: 20px 20px 50px 50px;
+}
+
+.footer-left-box {
+    width: 100%;
+    text-align: start;
+    display: flex;
+}
+
+.VibeWorldLogo {
+    height: 80px;
+    width: 100px;
+    object-fit: contain;
+    padding: 10px 50px;
+}
+
+.footer-heading {
+    font-weight: 400 !important;
+    font-size: 18px !important;
+    line-height: 21.78px !important;
+    margin: 20px 20px !important;
+    text-decoration: underline !important;
+    cursor: pointer !important;
+}
+
+.download-music-title {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+    margin: 20px 100px;
+    text-align: start;
+}
+
+.footer-icons-cont {
+    display: flex;
+    margin: 20px 90px;
+}
+
+.google-play-icon-cont {
+    margin: 10px;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.social-media-icons-cont {
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-list {
+    cursor: pointer !important;
+    display: flex !important;
+    flex-direction: column !important;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    line-height: 16.94px !important;
+    margin: 10px 20px !important;
+}
+
+.copyright-main-cont {
+    border-top: 1px solid white;
+}
+
+.copyright-sec-cont {
+    width: 80%;
+    margin: 20px 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.copyright-text {
+    width: 80% !important;
+    text-align: start !important;
+    font-weight: 400 !important;
+    font-size: 18px !important;
+    line-height: 24.7px !important;
+    font-weight: 600 !important;
+}
+
+.google-play-icon {
+    width: 150px;
+    object-fit: contain;
+}
+
+.app-store {
+    width: 150px;
+    object-fit: contain;
+}
+
+.icon {
+    width: 40px;
+    height: 20px;
+    object-fit: contain;
+}
+
+@media only screen and (max-width:1070px) and (min-width:900px) {
+    .download-music-title {
+        margin: 20px 45px;
+    }
+
+    .footer-icons-cont {
+        margin: 20px 20px;
+    }
+
+    .VibeWorldLogo {
+        padding: 10px 40px;
+    }
+
+
+}
+
+@media only screen and (max-width:899px) and (min-width:801px) {
+    .VibeWorldLogo {
+        padding: 10px 0px;
+    }
+
+    .download-music-title {
+        font-size: 12px;
+    }
+
+    .google-play-icon,
+    .app-store {
+        width: 140px;
+    }
+
+    .download-music-title {
+        font-size: 18px;
+        margin: 20px 80px;
+    }
+
+    .footer-icons-cont {
+        margin: 20px 60px;
+    }
+
+}
+
+
+@media only screen and (max-width:800px) and (min-width:770px) {
+    .footer-left-box {
+        text-align: center;
+    }
+
+    .grid-main-cont {
+        padding: 10px;
+    }
+
+    .VibeWorldLogo {
+        padding: 0px 10px;
+        width: 100px;
+    }
+
+    .download-music-title {
+        font-size: 14px;
+        margin: 10px 0px;
+        text-align: center;
+        font-size: 14px;
+        margin: 20px 0px 0px 0px;
+        text-align: center;
+    }
+
+    .footer-icons-cont {
+        margin: 0px 0px;
+        justify-content: center;
+    }
+
+    .footer-heading {
+        font-size: 16px !important;
+        line-height: 18px !important;
+        margin: 20px 30px !important;
+    }
+
+    .footer-list {
+        font-size: 12px !important;
+        margin: 10px 15px !important;
+        text-align: center !important;
+    }
+
+    .google-play-icon {
+        width: 100px;
+    }
+
+    .app-store {
+        width: 100px;
+    }
+
+    .copyright-sec-cont {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .copyright-text {
+        text-align: center !important;
+        font-size: 10px !important;
+    }
+
+    .social-media-icons-cont {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .social-media-icons-cont img {
+        margin: 5px;
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+    }
+}
+
+@media only screen and (max-width:769px) and (min-width:600px) {
+    .footer-left-box {
+        text-align: center;
+    }
+
+    .grid-main-cont {
+        padding: 10px;
+    }
+
+    .VibeWorldLogo {
+        padding: 0px 10px;
+        width: 100px;
+    }
+
+    .download-music-title {
+        text-align: center;
+        font-size: 14px;
+        margin: 20px 0px 0px 26px;
+    }
+
+    .footer-icons-cont {
+        margin: 0px 0px;
+        justify-content: center;
+    }
+
+    .footer-heading {
+        font-size: 16px !important;
+        line-height: 18px !important;
+        margin: 20px 30px !important;
+    }
+
+    .footer-list {
+        font-size: 12px !important;
+        margin: 10px 15px !important;
+        text-align: center !important;
+    }
+
+    .google-play-icon {
+        width: 100px;
+    }
+
+    .app-store {
+        width: 100px;
+    }
+
+    .copyright-sec-cont {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .copyright-text {
+        text-align: center !important;
+        font-size: 10px !important;
+    }
+
+    .social-media-icons-cont {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .social-media-icons-cont img {
+        margin: 5px;
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+    }
+}
+
+@media only screen and (max-width: 599px) and (min-width:501px) {
+    .footer-left-box {
+        text-align: center;
+    }
+
+    .grid-main-cont {
+        padding: 10px;
+    }
+
+    .VibeWorldLogo {
+        padding: 10px 0px;
+    }
+
+    .download-music-title {
+        font-size: 14px;
+        margin: 10px 0px;
+        text-align: center;
+        font-size: 14px;
+        margin: 20px 0px 0px 0px;
+        text-align: center;
+    }
+
+    .footer-icons-cont {
+        margin: 0px 0px;
+        justify-content: center;
+    }
+
+    .footer-heading {
+        font-size: 16px !important;
+        line-height: 18px !important;
+        margin: 20px 30px !important;
+    }
+
+    .footer-list {
+        font-size: 12px !important;
+        margin: 10px 15px !important;
+        text-align: center !important;
+    }
+
+    .google-play-icon {
+        width: 100px;
+    }
+
+    .app-store {
+        width: 100px;
+    }
+
+    .copyright-sec-cont {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .copyright-text {
+        text-align: center !important;
+        font-size: 10px !important;
+    }
+
+    .social-media-icons-cont {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .social-media-icons-cont img {
+        margin: 5px;
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+    }
+}
+
+
+@media only screen and (max-width: 500px) and (min-width:320px) {
+    .grid-main-cont {
+        padding: 10px;
+    }
+
+    .footer-left-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .VibeWorldLogo {
+        padding: 5px 0px;
+    }
+
+    .download-music-title {
+        font-size: 14px;
+        margin: 10px 0px;
+        text-align: center;
+    }
+
+    .footer-icons-cont {
+        margin: 10px 0px;
+        justify-content: center;
+    }
+
+    .footer-heading {
+        font-size: 16px !important;
+        margin: 20px 39px !important;
+    }
+
+    .footer-list {
+        font-size: 12px !important;
+        margin: 10px 15px !important;
+        text-align: center !important;
+    }
+
+    .google-play-icon {
+        width: 100px;
+    }
+
+    .app-store {
+        width: 100px;
+    }
+
+    .copyright-sec-cont {
+        flex-direction: column;
+    }
+
+    .copyright-text {
+        text-align: center !important;
+        font-weight: 400 !important;
+        font-size: 10px !important;
+        line-height: 24.7px !important;
+        font-weight: 600 !important;
+    }
+
+    .social-media-icons-cont {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .social-media-icons-cont img {
+        margin: 5px;
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+    }
+}

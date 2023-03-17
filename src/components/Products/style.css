@@ -1,0 +1,137 @@
+.top-right-hp {
+    position: absolute;
+    top: 40%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    height: 200px;
+}
+
+.product-cont {
+    padding: 0px 50px;
+}
+
+.shop-title {
+    color: #AAAAAA;
+    font-size: 24px;
+}
+
+.text-dec {
+    border-bottom: 3px solid #374256;
+}
+
+.span-title {
+    color: #374256;
+}
+
+.top-categ-text {
+    font-family: 'Inter' !important;
+    font-weight: 400 !important;
+    font-size: 16px !important;
+    color: #222222;
+}
+
+.pro-price {
+    color: #D9AC5D;
+    text-decoration: line-through;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.pro-price2 {
+    font-size: 14px;
+}
+
+.banner-cont2 {
+    background: url("../../static/images/headphoneBanner2.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    object-fit: contain;
+    margin-bottom: 100px;
+}
+
+
+
+@media only screen and (max-width: 1200px) and (min-width:1000px) {
+    .card-main-cont {
+        min-width: 140px !important;
+    }
+
+    .top-right-hp {
+        height: 150px;
+    }
+}
+
+@media only screen and (max-width: 999px) and (min-width:900px) {
+    .card-main-cont {
+        min-width: 100px !important;
+    }
+
+    .pro-title,
+    .pro-price,
+    .pro-price2 {
+        font-size: 12px !important;
+    }
+
+    .top-right-hp {
+        height: 150px;
+    }
+}
+
+@media only screen and (max-width: 899px) and (min-width:731px) {
+    .top-right-hp {
+        height: 120px;
+    }
+}
+
+@media only screen and (max-width: 730px) and (min-width:401px) {
+    .card-main-cont {
+        min-width: 140px !important;
+    }
+
+    .top-right-hp {
+        top: 35%;
+        left: 75%;
+        height: 80px;
+    }
+
+    .shop-title {
+        font-size: 15px;
+    }
+
+    .product-cont {
+        padding: 0px 20px;
+    }
+
+    .banner-cont2 {
+        margin-bottom: 50px;
+    }
+}
+
+@media only screen and (max-width: 400px) and (min-width:330px) {
+    .card-main-cont {
+        min-width: 230px !important;
+    }
+
+    .grid-cont {
+        margin: 20px !important;
+        text-align: center !important;
+    }
+
+    .top-right-hp {
+        top: 32%;
+        left: 75%;
+        height: 60px;
+    }
+
+    .shop-title {
+        font-size: 15px;
+    }
+
+    .product-cont {
+        padding: 0px 20px;
+    }
+
+    .banner-cont2 {
+        margin-bottom: 50px;
+    }
+}
