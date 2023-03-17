@@ -68,9 +68,23 @@ const MuiNavbar = ({ navitems }) => {
                 src={imagepaths.vibe_app_logo}
               />
               </Stack>
-
+              <Stack direction={'row'} sx={{alignItems:'center',m:1}}>
+              <Button
+                    component={Link}
+                    to="/SignInScreen"
+                    sx={{
+                      textTransform: "none",
+                      backgroundColor: "#D9AC5D",
+                      color: "white",
+                      width: 50,
+                      height: 30,
+                    }}
+                    size="small"
+                  >
+                    Sign In
+                  </Button>
                <Badge
-                    sx={{ m: 1 }}
+                   
                     badgeContent={itemQuantity.length}
                     color="primary"
                   >
@@ -84,6 +98,7 @@ const MuiNavbar = ({ navitems }) => {
                       <ShoppingCartCheckoutIcon />
                     </IconButton>
                   </Badge>
+                  </Stack>
                   </Stack>
             </>
           ) : (
