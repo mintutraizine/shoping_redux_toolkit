@@ -1,10 +1,9 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";
-import Home from "./pages/Home";
+import Home from "./pages/HomeScreen/Home";
 import { PersistGate } from "redux-persist/integration/react";
 import store, { persistor } from "./store/store";
-import MuiNavbar from "./components/MuiNavbar";
 import ProductDetails from "./pages/productdetails/ProductDetails";
 import Cart from "./pages/cartScreen/Cart";
 import ContactUs from "./pages/ContactUs/ContactUs";
@@ -12,8 +11,9 @@ import SignInScreen from "./pages/SignInscreen/SignInScreen";
 import SignupScreen from "./pages/SignupScreen/SignupScreen";
 import OtpScreen from "./pages/OtpScreen/OtpScreen";
 import CustomModal from "./components/CustomModal/CustomModal";
-import Footer from "./components/Footer";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
+import MuiNavbar from "./components/Navigation/MuiNavbar";
+import Footer from "./components/Footer/Footer";
 const navitmelist = [
   { ScreenName: "Home", Path: "/" },
   { ScreenName: "About Us", Path: "/Services" },

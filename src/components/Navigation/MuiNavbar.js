@@ -21,14 +21,12 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
-import imagepaths from "../static/imagepaths";
-//import vibelogo from '../static/images/vibe_logo.png'
 import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import DrawerCompoenent from "./DrawerCompoenent";
-import "./Footer.css";
-//import { Stack } from '@mui/system';
+import imagepaths from "../../static/imagepaths";
+import "./style.css";
 const MuiNavbar = ({ navitems }) => {
   const itemQuantity = useSelector((state) => state.cart);
   const [countyName, setcountyName] = React.useState("");

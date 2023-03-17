@@ -1,0 +1,19 @@
+
+/* for header css flag dropdown */
+.YOUR_CSS_CLASS{
+    background-color: transparent !important;
+}
+.country-select .country-list{
+    width: 170px !important;
+    color: black !important;
+    border-radius: 5px !important;
+    overflow-x: hidden !important;
+    margin-top: 10px !important;
+}
+/* .country-select .selected-flag .arrow{
+    border-top: 4px solid #fff !important;
+}
+.country-select .selected-flag .arrow.up{
+    border-top: 4px solid #fff !important;
+} */
+/* End for header css flag dropdown*/

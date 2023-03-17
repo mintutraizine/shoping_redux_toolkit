@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { Grid } from '@mui/material';
 import "./Footer.css";
-import imagepaths from '../static/imagepaths';
+import imagepaths from '../../static/imagepaths';
 
 
 const col1 = ['Sign Up', 'About Us'];
