@@ -142,7 +142,7 @@ const MuiNavbar = ({ navitems }) => {
                   </FormControl>
                   <Button
                     component={Link}
-                    to="/SignInScreen"
+                    to="/CustomModal/SignInScreen"
                     sx={{
                       m: 1,
                       textTransform: "none",

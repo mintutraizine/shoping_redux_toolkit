@@ -1,0 +1,19 @@
+.OTPBox input:focus {
+    color: #EF7F1A !important;
+    border: 1px solid #EF7F1A !important;
+    outline: none !important;
+}
+
+.OTPBox input:visited {
+    color: #EF7F1A !important;
+    border: 1px solid #EF7F1A !important;
+}
+
+.OTPBox input:focus-visible {
+    color: #D9AC5D !important;
+    border: 1px solid #D9AC5D !important;
+}
+.OTPBox{
+   align-items: center;
+   justify-content:'center';
+}

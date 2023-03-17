@@ -6,6 +6,7 @@ const imagepaths = {
   facebookIcon: require("./images/facebook.png"),
   googleIcon: require("./images/Google.png"),
   otpBackground: require("./images/otpbackground.png"),
+  backIcon: require("./images/backIcon.png"),
 };
 
 export default imagepaths;
