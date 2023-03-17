@@ -49,7 +49,6 @@ function App() {
               <Route path="/OtpScreen" element={<OtpScreen />}></Route> */}
                 <Route path="/CustomModal" element={<CustomModal />}>
                   <Route path="SignInScreen" element={<SignInScreen />} />
-
                   <Route path="SignupScreen" element={<SignupScreen />} />
                   <Route path="OtpScreen" element={<OtpScreen />} />
                 </Route>

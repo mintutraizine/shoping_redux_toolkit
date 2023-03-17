@@ -7,7 +7,7 @@
 }
 
 .product-cont {
-    padding: 0px 50px;
+    padding: 10px 50px;
 }
 
 .shop-title {
@@ -46,7 +46,7 @@
     background-repeat: no-repeat;
     background-size: 100% 100%;
     object-fit: contain;
-    margin-bottom: 100px;
+    margin-bottom: 20px;
 }
 
 

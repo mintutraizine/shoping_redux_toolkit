@@ -4,9 +4,7 @@ import Products from '../../components/Products/index';
 const Home = () => {
     return (
         <div>
-            <section>
-                <Products />
-            </section>
+            <Products />
         </div>
     );
 };
