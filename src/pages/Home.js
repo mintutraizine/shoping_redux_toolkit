@@ -1,12 +1,10 @@
 import React from 'react';
-import Products from '../components/Products/index';
+import Products from './HeadphoneScreen';
 
 const Home = () => {
     return (
         <div>
-            <section>
-                <Products />
-            </section>
+            <Products />
         </div>
     );
 };
