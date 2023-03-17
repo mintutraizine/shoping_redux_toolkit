@@ -1,13 +1,12 @@
 import { Margin } from '@mui/icons-material';
-import { Box, Button, CardMedia, FormControl, Grid, Input, MenuItem, Select, TextField, Typography } from '@mui/material';
+import { Box, Button, CardMedia, Divider, FormControl, Grid, Input, MenuItem, Select, TextField, Typography } from '@mui/material';
 import { Stack } from '@mui/system';
 import { getNodeText } from '@testing-library/react';
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { remove } from '../../store/cartSlice';
 import cartstyle from './style';
-import style from './style';
-//import "./cart.css";
+import "./cart.css";
 const Cart = () => {
     const dispatch = useDispatch();
     const products = useSelector((state) => state.cart);
@@ -17,9 +16,15 @@ const Cart = () => {
 
     return (
         <>
-            <Grid container sx={{ p: { xs: 1, sm: 5, md: 7 } }}>
-                <Grid item xs={12} sm={12} md={8}>
-                    <Typography sx={[cartstyle.itemcarttextstyle]} >Item in Your Cart</Typography >
+        <Box sx={{ p: { xs: 1, sm: 5, md: 7 } }}>
+         <Typography sx={[cartstyle.itemcarttextstyle]} >Item in Your Cart</Typography >
+         <Divider style={{ background: 'black',height:1,width:'25%' }} />
+         <Divider/>
+        
+            <Grid container sx={{marginTop:2}}>
+                
+                <Grid item xs={12} sm={12} md={6.8} lg={6.8}>
+                   
                     <Box>
                         {products.map((product) => (
                             <Box sx={cartstyle.productbox} key={product.id} >
@@ -39,8 +44,8 @@ const Cart = () => {
 
                                 <Box sx={cartstyle.productdetailsbox}>
                                     <Stack>
-                                        <Typography sx={{fontSize: { xs: 12, sm: 15, md: 20, lg: 22 }}}>{product.title}</Typography >
-                                        <Typography sx={{ marginTop: 0.2,fontSize: { xs: 12, sm: 15, md: 20, lg: 22 } }}>{'color: ' + product.price}</Typography >
+                                        <Typography sx={cartstyle.titlestyle}>{product.title}</Typography >
+                                        <Typography  sx={cartstyle.colortextstyle}>{'color: ' + product.price}</Typography >
                                         <Stack sx={{
                                             width: '100%', flexDirection: 'row',
                                             justifyContent: 'space-between', alignItems: 'center'
@@ -48,7 +53,7 @@ const Cart = () => {
                                             <FormControl sx={cartstyle.itemdropdown}>
                                                 <Select sx={{
                                                     width: 62,
-                                                    height: 36,
+                                                    height: { xs: 30, sm: 30, md: 30, lg: 36 },
                                                 }}
                                                     displayEmpty
                                                     inputProps={{ 'aria-label': 'Without label' }}
@@ -61,7 +66,7 @@ const Cart = () => {
                                                 </Select>
                                             </FormControl>
 
-                                            <Typography sx={{ color: '#D9AC5D', marginTop: 1, fontWeight: '600',fontSize: { xs: 15, sm: 15, md: 18, lg: 22 } }}>{'$' + product.price}</Typography >
+                                            <Typography className='productprice' sx={{  marginTop: 1,fontWeight:600,fontSize: { xs: 15, sm: 15, md: 18, lg: 20 } }}>{'$' + product.price}</Typography >
                                         </Stack>
                                         <Button
                                             sx={cartstyle.removebutton}
@@ -77,7 +82,10 @@ const Cart = () => {
                         ))}
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={12} md={4}>
+                <Grid item xs={1} sm={1} md={0.2} lg={0.2}>
+
+                </Grid>
+                <Grid item xs={12} sm={12} md={5} lg={5}>
                     <Typography style={{ fontSize: { xs: 15, sm: 18, md: 20, lg: 25 }, color: '#222222' }}>
                         {'Cart Summary'}
                     </Typography>
@@ -85,13 +93,13 @@ const Cart = () => {
                         sx={{
                             display: 'flex',
                             justifyContent: 'space-between',
-                            p: 1,
-                            m: 1,
+                            paddingTop: 1,paddingBottom: 1,
+                            marginBottom: 1,marginTop:1,
                             borderTop: 1, borderTopColor: '#DDDDDD'
                         }}
                     >
                         <Typography sx={{ color: '#AAAAAA' }}>
-                            {'$' + 'Product total'}
+                            {'Product total'}
                         </Typography>
                         <Typography style={{ textDecorationStyle: 'solid', marginLeft: 20, }}>
                             {'$' + '464'}
@@ -101,14 +109,14 @@ const Cart = () => {
                         sx={{
                             display: 'flex',
                             justifyContent: 'space-between',
-                            p: 1,
-                            m: 1,
+                            paddingTop: 1,paddingBottom: 1,
+                            marginBottom: 1,marginTop:1,
                             bgcolor: 'background.paper',
                             borderRadius: 1,
                         }}
                     >
                         <Typography sx={{ color: '#AAAAAA' }}>
-                            {'Shiping'}
+                            {'Shipping'}
                         </Typography>
                         <Typography style={{ textDecorationStyle: 'solid', marginLeft: 20, }}>
                             {'' + 'free'}
@@ -118,8 +126,8 @@ const Cart = () => {
                         sx={{
                             display: 'flex',
                             justifyContent: 'space-between',
-                            p: 1,
-                            m: 1,
+                            paddingTop: 1,paddingBottom: 1,
+                            marginBottom: 1,marginTop:1,
                             borderTop: 1, borderTopColor: '#DDDDDD', borderBottom: 1, borderBottomColor: '#DDDDDD'
                         }}
                     >
@@ -133,7 +141,7 @@ const Cart = () => {
                    
                     <Box sx={{
                         p: 1,
-                        m: 1,
+                        
                         borderRadius: 1,
                         border: 1,
                         borderColor: '#DDDDDD'
@@ -160,19 +168,19 @@ const Cart = () => {
                             sx={[{
                                 display: 'flex',
                                 justifyContent: 'flex-end',
-                                p: 1,
-                                m: 1,
+                                paddingTop: 1,paddingBottom: 1,
+                                marginBottom: 1,marginTop:1,
 
                             }, cartstyle.cart]}
                         >
                             <Typography sx={{ color: '#D9AC5D' }}>
-                                {'change address '}
+                                {'Change address '}
                             </Typography>
                         </Box>
                     </Box>
                 </Grid>
             </Grid>
-
+            </Box>
         </>
     );
 };

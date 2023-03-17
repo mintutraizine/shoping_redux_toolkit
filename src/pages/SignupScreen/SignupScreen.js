@@ -6,18 +6,64 @@ import {
   Stack,
   Divider,
   Grid,
+  Modal,
+  Backdrop,
+  Fade,
 } from "@mui/material";
 
 import imagepaths from "../../static/imagepaths";
 import { Link } from "react-router-dom";
+//import Modal from "react-modal";
+import React, { useState, useEffect, useCallback } from "react";
+import OTPInput, { ResendOTP } from "otp-input-react";
+//import OtpInput from "react18-input-otp";
+
+const style = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 720,
+  bgcolor: "background.paper",
+  // border: "2px solid #000",
+  boxShadow: 24,
+  // p: 4,
+};
 const SignupScreen = () => {
+  //const navigate = useNavigate();
+  const [otp, setOtp] = useState("");
+  const [timer, setTimer] = useState(60);
+  const [numInputs, setnumInputs] = useState(4);
+
+  const timeOutCallback = useCallback(
+    () => setTimer((currTimer) => currTimer - 1),
+    []
+  );
+
+  useEffect(() => {
+    timer > 0 && setTimeout(timeOutCallback, 1000);
+  }, [timer, timeOutCallback]);
+
+  console.log(timer);
+
+  const resetTimer = () => {
+    // if (!timer) {
+    setTimer(30);
+    //}
+  };
+
+  const onSubmit = () => {
+    //alert(OTP);
+    alert("hello");
+  };
+
   return (
     <Box
-      maxHeight={450}
+      // maxHeight={450}
       sx={{
         flexGrow: 1,
         maxWidth: 800,
-        //  backgroundColor: "red",
+        //backgroundColor: "red",
         margin: "auto",
         marginTop: 4,
         border: "1 px solid black",
@@ -35,8 +81,8 @@ const SignupScreen = () => {
             justifyContent={"center"}
             display="flex"
             flexDirection={"column"}
-            paddingRight={2}
-            paddingLeft={2}
+            paddingRight={6}
+            paddingLeft={6}
           >
             <Typography
               fontFamily={"inter"}
@@ -56,6 +102,7 @@ const SignupScreen = () => {
               fontFamily={"inter"}
               fontStyle={"normal"}
               color={"#D9AC5D"}
+              sx={{ cursor: "pointer" }}
             >
               Create Vibe World Account
             </Typography>
@@ -92,9 +139,10 @@ const SignupScreen = () => {
                   placeholder="+1"
                   size="small"
                   // fontSize={"14px"}
+                  style={{ width: 60 }}
                 />
               </Stack>
-              <Stack>
+              <Stack style={{ marginLeft: 10 }}>
                 <TextField
                   variant="outlined"
                   placeholder=" Enter number"
@@ -119,22 +167,43 @@ const SignupScreen = () => {
               size="small"
               // fontSize={"14px"}
             />
-            <Typography
-              variant="h8"
-              align="left"
-              marginTop={1}
-              marginBottom={1}
-              fontWeight={400}
-              fontSize={"12px"}
-            >
-              Password
-            </Typography>
-            <TextField
-              placeholder="Enter password"
-              fontWeight={400}
-              fontSize={"14px"}
-              size="small"
-            />
+            <Stack display={"flex"} flexDirection="row" marginTop={2}>
+              <Stack>
+                <Typography
+                  variant="h8"
+                  align="left"
+                  fontWeight={400}
+                  fontSize={"12px"}
+                  marginBottom={1}
+                >
+                  Password
+                </Typography>
+                <TextField
+                  variant="outlined"
+                  placeholder="password"
+                  size="small"
+                  // fontSize={"14px"}
+                />
+              </Stack>
+              <Stack style={{ marginLeft: 10 }}>
+                <Typography
+                  variant="h8"
+                  align="left"
+                  fontWeight={400}
+                  fontSize={"12px"}
+                  marginBottom={1}
+                >
+                  Confirm Password
+                </Typography>
+                <TextField
+                  variant="outlined"
+                  placeholder="password"
+                  size="small"
+                  // fontSize={"14px"}
+                />
+              </Stack>
+            </Stack>
+
             <Button
               variant="contained"
               sx={{
@@ -143,7 +212,7 @@ const SignupScreen = () => {
                 color: "#374256",
               }}
             >
-              <Typography fontSize={"14px"}>Vibe In</Typography>
+              <Typography fontSize={"14px"}>Create Vibe World</Typography>
             </Button>
 
             <Stack
@@ -151,12 +220,16 @@ const SignupScreen = () => {
               flexDirection="row"
               alignItems={"center"}
               margin="auto"
-              marginTop={3}
-              component={Link}
-              to="/OtpScreen"
+              marginTop={5}
             >
               <Typography fontSize={12}>Don’t have an account ? </Typography>
-              <Typography fontSize={12} color="#D9AC5D">
+              <Typography
+                fontSize={12}
+                color="#D9AC5D"
+                component={Link}
+                to="/CustomModal/OtpScreen"
+                // sx={{ cursor: "pointer" }}
+              >
                 Create Vibe World Account
               </Typography>
             </Stack>

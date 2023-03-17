@@ -6,6 +6,7 @@ const imagepaths = {
   facebookIcon: require("./images/Facebook.png"),
   googleIcon: require("./images/Google.png"),
   otpBackground: require("./images/otpbackground.png"),
+  backIcon: require("./images/backIcon.png"),
   Youtube_icon: require("./images/Youtube.png"),
   Instagram_icon: require("./images/Instagram.png"),
   Facebook_icon: require("./images/Facebook.png"),
@@ -14,7 +15,8 @@ const imagepaths = {
   App_Store_Icon: require("./images/AppStore.png"),
   VibeWorldLogo: require("./images/VibeWorldLogo.png"),
   headphoneBanner1: require("./images/headphoneBanner1.png"),
-  headphoneBanner2: require("./images/headphoneBanner2.png")
+  headphoneBanner2: require("./images/headphoneBanner2.png"),
+  vibe_app_logo: require("./images/vibe_app_logo.png"),
 };
 
 export default imagepaths;

@@ -15,7 +15,7 @@ import imagepaths from "../../static/imagepaths";
 const SignInScreen = () => {
   return (
     <Box
-      maxHeight={450}
+      // maxHeight={450}
       sx={{
         flexGrow: 1,
         maxWidth: 800,
@@ -37,8 +37,8 @@ const SignInScreen = () => {
             justifyContent={"center"}
             display="flex"
             flexDirection={"column"}
-            paddingRight={2}
-            paddingLeft={2}
+            paddingRight={6}
+            paddingLeft={6}
           >
             <Typography
               fontFamily={"inter"}
@@ -109,7 +109,7 @@ const SignInScreen = () => {
               justifyContent={"space-between"}
               spacing={1}
               alignItems="center"
-              marginTop={1}
+              marginTop={3}
             >
               <Stack flexDirection={"row"} alignItems="center">
                 <div
@@ -117,7 +117,7 @@ const SignInScreen = () => {
                     border: "1px solid #D9AC5D",
                     height: 12,
                     width: 12,
-                    marginRight: 5,
+                    marginRight: 10,
                   }}
                 ></div>
                 <Typography
@@ -149,6 +149,7 @@ const SignInScreen = () => {
               marginTop={2}
             >
               <hr
+                size={1}
                 style={{
                   color: "#000000",
                   backgroundColor: "#000000",
@@ -156,9 +157,11 @@ const SignInScreen = () => {
                   borderColor: "#000000",
                   width: 100,
                 }}
+                borderColor="red"
               />
               <div style={{ margin: 4 }}>or</div>
               <hr
+                size={1}
                 style={{
                   color: "#000000",
                   backgroundColor: "#000000",
@@ -202,12 +205,15 @@ const SignInScreen = () => {
               flexDirection="row"
               alignItems={"center"}
               margin="auto"
-              marginTop={3}
-              component={Link}
-              to="/SignupScreen"
+              marginTop={4}
             >
               <Typography fontSize={12}>Don’t have an account ? </Typography>
-              <Typography fontSize={12} color="#D9AC5D">
+              <Typography
+                fontSize={12}
+                color="#D9AC5D"
+                component={Link}
+                to="/CustomModal/SignupScreen"
+              >
                 Create Vibe World Account
               </Typography>
             </Stack>

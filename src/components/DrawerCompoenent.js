@@ -12,8 +12,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 import InboxIcon from '@mui/icons-material/Inbox';
 import DraftsIcon from '@mui/icons-material/Drafts';
 import { IconButton } from '@mui/material';
+import { Link } from 'react-router-dom';
 
-export default function DrawerCompoenent() {
+export default function DrawerCompoenent({draweritems}) {
   const [drawerStatus, setDrawerStatus] = React.useState(false)
   return (
     <>
@@ -24,25 +25,27 @@ export default function DrawerCompoenent() {
        
       >
        <List>
-          <ListItem disablePadding>
-            <ListItemButton>
+       {draweritems.map((item, index) => (
+                    <ListItem
+                      sx={{ textTransform: "none" }}
+                      component={Link}
+                      to={{
+                        pathname: item.Path,
+                      }}
+                      key={index}
+                     
+                    >
+                       <ListItemButton>
               <ListItemIcon>
                 <InboxIcon />
               </ListItemIcon>
-              <ListItemText primary="Inbox" />
+              <ListItemText primary={item.ScreenName} />
             </ListItemButton>
-          </ListItem>
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                <DraftsIcon />
-              </ListItemIcon>
-              <ListItemText primary="Drafts" />
-            </ListItemButton>
-          </ListItem>
+                    </ListItem>
+                  ))}
         </List>
       </Drawer>
-      <IconButton sx={{marginLeft:'auto',color:'white'}} onClick={()=>{setDrawerStatus(true)}}>
+      <IconButton sx={{color:'white'}} onClick={()=>{setDrawerStatus(true)}}>
 <MenuIcon/>
       </IconButton>
     </>
