@@ -44,15 +44,20 @@ function App() {
                   element={<ProductDetails />}
                 ></Route>
                 <Route path="/contactus" element={<ContactUs />}></Route>
+               
+                <Route path="SignupScreen" element={<SignupScreen />} />
+                  <Route path="OtpScreen" element={<OtpScreen />} />
                 {/* <Route path="/SignInScreen" element={<SignInScreen />}></Route> */}
                 {/* <Route path="/SignupScreen" element={<SignupScreen />}></Route>
               <Route path="/OtpScreen" element={<OtpScreen />}></Route> */}
-                <Route path="/CustomModal" element={<CustomModal />}>
-                  <Route path="SignInScreen" element={<SignInScreen />} />
+                {/* <Route path="/CustomModal" element={<CustomModal />}>
+                  <Route path="/CustomModal" element={<SignInScreen />} />
                   <Route path="SignupScreen" element={<SignupScreen />} />
                   <Route path="OtpScreen" element={<OtpScreen />} />
-                </Route>
+                </Route> */}
+
               </Routes>
+              <CustomModal />
               <Footer />
             </BrowserRouter>
           </PersistGate>

@@ -3,6 +3,7 @@ import cartReducer from './cartSlice';
 import productReducer from './productSlice';
 import { persistReducer, persistStore } from 'redux-persist';
 import storage from "redux-persist/lib/storage";
+import loginModalSlice from './loginModalSlice';
 // follow this
 //https://blog.logrocket.com/persist-state-redux-persist-redux-toolkit-react/
 const persistConfig = {
@@ -12,7 +13,8 @@ const persistConfig = {
 }
 const rootReducer = combineReducers({
     cart: cartReducer,
-    product: productReducer
+    product: productReducer,
+    loginmodal:loginModalSlice
 })
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 const store = configureStore({

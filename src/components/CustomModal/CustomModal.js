@@ -1,17 +1,23 @@
 import { Backdrop, Box, Fade, Modal } from "@mui/material";
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, Outlet } from "react-router-dom";
+import OtpScreen from "../../pages/OtpScreen/OtpScreen";
+import SignInScreen from "../../pages/SignInscreen/SignInScreen";
+import SignupScreen from "../../pages/SignupScreen/SignupScreen";
 
 const CustomModal = () => {
   const [open, setOpen] = React.useState(true);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const dispatch = useDispatch();
+  const {status,modalScreeenName} = useSelector((state) => state.loginmodal);
   return (
     <div>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
-        open={open}
+        open={status}
         //onClose={handleClose}
         closeAfterTransition
         slots={{ backdrop: Backdrop }}
@@ -40,9 +46,9 @@ const CustomModal = () => {
             backgroundColor: "white",
           }}
         >
-          {/* <Link to="/ContactModal/Home">go to home</Link>
-          <Link to="/ContactModal/ModalHome">go to modal home </Link> */}
-          <Outlet />
+         {modalScreeenName==='login'?<SignInScreen/>:null}
+         {modalScreeenName==='signup'?<SignupScreen/>:null}
+         {modalScreeenName==='otpscreen'?<OtpScreen/>:null}
         </Box>
       </Modal>
     </div>

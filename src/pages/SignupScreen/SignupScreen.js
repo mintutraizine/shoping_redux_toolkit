@@ -16,6 +16,8 @@ import { Link } from "react-router-dom";
 //import Modal from "react-modal";
 import React, { useState, useEffect, useCallback } from "react";
 import OTPInput, { ResendOTP } from "otp-input-react";
+import { changeScreenName, openmodal } from "../../store/loginModalSlice";
+import { useDispatch } from "react-redux";
 //import OtpInput from "react18-input-otp";
 
 const style = {
@@ -31,6 +33,7 @@ const style = {
 };
 const SignupScreen = () => {
   //const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [otp, setOtp] = useState("");
   const [timer, setTimer] = useState(60);
   const [numInputs, setnumInputs] = useState(4);
@@ -45,7 +48,10 @@ const SignupScreen = () => {
   }, [timer, timeOutCallback]);
 
   console.log(timer);
-
+  const callOtpModal=()=>{
+    dispatch(openmodal())
+    dispatch(changeScreenName('otpscreen'));
+  }
   const resetTimer = () => {
     // if (!timer) {
     setTimer(30);
@@ -223,15 +229,11 @@ const SignupScreen = () => {
               marginTop={5}
             >
               <Typography fontSize={12}>Don’t have an account ? </Typography>
-              <Typography
-                fontSize={12}
-                color="#D9AC5D"
-                component={Link}
-                to="/CustomModal/OtpScreen"
-                // sx={{ cursor: "pointer" }}
+              <p
+                onClick={()=>{callOtpModal()}}
               >
                 Create Vibe World Account
-              </Typography>
+              </p>
             </Stack>
           </Box>
         </Grid>

@@ -6,7 +6,8 @@ import React, { useState, useEffect, useCallback } from "react";
 import imagepaths from "../../static/imagepaths";
 import { useNavigate } from "react-router-dom";
 import "./OtpScreen.css";
-
+import { useDispatch, useSelector } from "react-redux";
+import {openmodal,closemodal} from '../../store/loginModalSlice'
 // const useStyles = makeStyles((theme) =>
 //   createStyles({
 //     paper: {
@@ -24,7 +25,11 @@ const OtpScreen = () => {
   const navigate = useNavigate();
   const [otp, setOtp] = useState("");
   const [numInputs, setnumInputs] = useState(4);
-
+  const dispatch = useDispatch();
+  const modalstatus = useSelector((state) => state.loginmodal);
+  const handleClose = () => {
+      dispatch(closemodal());
+  };
   const handleChange = (enteredOtp) => {
     setOtp(enteredOtp);
   };
@@ -91,7 +96,7 @@ const OtpScreen = () => {
             }}
           >
             <img
-              onClick={() => navigate(-1)}
+              onClick={() =>  dispatch(closemodal())}
               src={imagepaths.backIcon}
               style={{ height: 14, width: 14 }}
             />

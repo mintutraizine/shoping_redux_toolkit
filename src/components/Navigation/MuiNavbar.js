@@ -22,16 +22,19 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout";
-import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import DrawerCompoenent from "./DrawerCompoenent";
 import imagepaths from "../../static/imagepaths";
 import "./style.css";
+import { changeScreenName, openmodal } from "../../store/loginModalSlice";
 const MuiNavbar = ({ navitems }) => {
   const itemQuantity = useSelector((state) => state.cart);
   const [countyName, setcountyName] = React.useState("");
+  const navigate=useNavigate();
   const items = useSelector((state) => state.cart);
   const [tabvalue, settabValue] = useState(0);
+  const dispatch = useDispatch();
   const theme = useTheme();
   const isScreenSizematch = useMediaQuery(theme.breakpoints.down("md"));
   console.log(theme);
@@ -42,6 +45,11 @@ const MuiNavbar = ({ navitems }) => {
   const handleCountryChange = (event) => {
     setcountyName(event.target.value);
   };
+
+  const callSignInModal=()=>{
+    dispatch(openmodal())
+    dispatch(changeScreenName('login'));
+  }
   return (
     <Box sx={{ position: "sticky", top: 0,zIndex:2 }}>
       <AppBar
@@ -183,8 +191,8 @@ const MuiNavbar = ({ navitems }) => {
                     <CountryDropdown  id="UNIQUE_ID" className='YOUR_CSS_CLASS'  value=""></CountryDropdown>  
                   </FormControl>
                   <Button
-                    component={Link}
-                    to="/CustomModal/SignInScreen"
+                   
+                   onClick={()=>{callSignInModal()}}
                     sx={{
                       m: 1,
                       textTransform: "none",
