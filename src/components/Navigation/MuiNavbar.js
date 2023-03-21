@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import ReactFlagsSelect from "react-flags-select";
+import CountryDropdown from 'country-dropdown-with-flags-for-react'; 
 import {
   AppBar,
   Button,
@@ -19,13 +21,12 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
-import imagepaths from "../static/imagepaths";
-//import vibelogo from '../static/images/vibe_logo.png'
 import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import DrawerCompoenent from "./DrawerCompoenent";
-//import { Stack } from '@mui/system';
+import imagepaths from "../../static/imagepaths";
+import "./style.css";
 const MuiNavbar = ({ navitems }) => {
   const itemQuantity = useSelector((state) => state.cart);
   const [countyName, setcountyName] = React.useState("");
@@ -36,6 +37,7 @@ const MuiNavbar = ({ navitems }) => {
   console.log(theme);
   console.log(isScreenSizematch);
 
+  const [selected, setSelected] = useState("");
   //chnage country
   const handleCountryChange = (event) => {
     setcountyName(event.target.value);
@@ -162,8 +164,8 @@ const MuiNavbar = ({ navitems }) => {
                     </IconButton>
                   </Badge>
 
-                  <FormControl size="small" sx={{ m: 1, minWidth: 80 }}>
-                    <Select
+                  <FormControl size="small" sx={{ m: 1,width:60 }}>
+                    {/* <Select
                       inputProps={{ "aria-label": "Without label" }}
                       labelId="demo-simple-select-label"
                       id="demo-simple-select"
@@ -173,7 +175,12 @@ const MuiNavbar = ({ navitems }) => {
                       <MenuItem value={1}>1</MenuItem>
                       <MenuItem value={2}>2</MenuItem>
                       <MenuItem value={3}>3</MenuItem>
-                    </Select>
+                    </Select> */}
+                    {/* <ReactFlagsSelect
+                      selected={selected}
+                      onSelect={(code) => setSelected(code)}
+                    /> */}
+                    <CountryDropdown  id="UNIQUE_ID" className='YOUR_CSS_CLASS'  value=""></CountryDropdown>  
                   </FormControl>
                   <Button
                     component={Link}
