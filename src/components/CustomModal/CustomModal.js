@@ -24,6 +24,7 @@ const CustomModal = () => {
         <Box
           sx={{
             flexGrow: 1,
+            width: "65%",
             //maxWidth: 740,
             // margin: "auto",
             // marginTop: 6,
